@@ -1,7 +1,7 @@
 # small project
 
 ## 介绍
-small project  collection
+small project  collections
 
 ### ToDoList  
 
