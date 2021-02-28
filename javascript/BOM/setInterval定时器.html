@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script></script>
+	</head>
+	<body>
+		<!-- window.setInterval(回调函数,[间隔的毫秒数])；
+			 setInterval()方法重复调用一个函数，每个这个时间 就去调用一次回调函数
+			 注意：
+			 window可以省略
+			 这个调用函数可以直接写函数 或者写函数名 或者采用字符串'函数名()'三种形式
+			 间隔的毫秒数省略默认是0  如果子额 必须是毫秒 表示每隔多少毫秒就自动调用这个函数
+			 因为定时器可能有很多 所以我们经常给定时器赋值一个标识符
+			 
+		 -->
+		 <script>
+			 setInterval(function(){
+				 console.log('继续输出');
+			 },1000);
+			 //setTimeout 延时时间到了就去调用这个回调函数 值调用一次 就结束这个歌定时器
+			 //setInterval 每隔这个延时时间 就去调用这个回调函数 会调用很多次 重复调用这个函数
+			 
+		 </script>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			/* var num = Math.floor(Math.random() * 10) + 1;
+			do{
+				var num1 = prompt('请您输入一个数字(1~10)：');
+				if(num1 > num){
+					alert('数字大了');
+				}
+				if(num1 < num){
+					alert('数字小了');
+				}
+			}while(num1 != num);
+			alert('恭喜您 猜对了!');
+			 */
+			//要求用户猜 1~50之间的一个数字 但是只有10次机会
+			var number = Math.floor(Math.random() * 50) + 1;
+			var i = 10;
+			while(i > 0){
+				var num2 = prompt('请您输入一个1~50之间的整数:');
+				if(num2 > number){
+					i--;
+					alert('您猜的数字大了,您还有' + i +'次机会哦')
+				}
+				else if(num2 < number){
+					i--;
+					alert('您猜的数字小了,您还有' + i +'次机会哦')
+				}
+				else{
+					alert('恭喜您猜对了！');
+					break;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<!-- 猜数字游戏
+			 程序随机生成一个 1-10之间的数字 并让用户输入一个数字
+			 1.如果大于该数字 就提示 数字大了 继续猜
+			 2.如果小于该数字，就提示数字小了 继续猜
+			 3.如果等于该数字 就提示猜对了 结束程序
+		 -->
+	</body>
+</html>

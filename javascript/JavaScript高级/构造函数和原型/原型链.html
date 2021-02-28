@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		
+		<script>
+			function Star(uname,age){
+				this.uname = uname;
+				this.age = age;
+			}
+			Star.prototype.sing = function(){
+				console.log(我会唱歌)
+			}
+			var ldh = new Star('刘德华',18);
+			//只要是对象就有__proto__原型 指向原型对象
+			console.log(Star.prototype);//里面也有一个对象原型__proto__
+			console.log(Star.prototype.__proto__);//指向的是 Object.prototype
+			//我们Star原型对象里面的__proto__原型指向的是 Object.prototype
+			console.log(Object.prototype.__proto__);//指向的是null
+			//我们Object.prototype原型对象里面的__proto__原型 指向null 说明Object是最顶层的了
+			
+		</script>
+	</body>
+</html>

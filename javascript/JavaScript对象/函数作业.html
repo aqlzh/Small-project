@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			function reverse(arr){
+				var newArr = [];
+				for(var i = arr.length-1;i >= 0;i--){
+					newArr[newArr.length] = arr[i];
+				}
+				return newArr;
+			}
+			var arr = [0,2,55,6,78,8];
+			var arr1 = reverse(arr);
+			for(var k in arr1){
+				console.log(arr1[k]);
+			}
+			function sort(arr){
+				for(var i = 0; i < arr.length - 1; i++){
+					for(j = 0; j < arr.length - i - 1;j++){
+						if(arr[j] > arr[j+1]){
+							var temp = arr[j];
+							arr[j] = arr[j+1];
+							arr[j+1] = temp;
+						}
+					}
+				}
+				return arr;
+			}
+			var a = [12,25,1,2,23,89,65,36];
+			var arr2 = sort(a);
+			console.log(arr2);
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+			.box{
+				width: 820px;
+				height: 200px;
+				margin: 100px auto;
+			}
+			.box img{
+				width: 200px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/2030188.jpg" alt="">
+			<img src="img/2030190.jpg" alt="">
+			<img src="img/2034041.jpg" alt="">
+			<img src="img/2026699.jpg" alt="">
+		</div>
+		<script>
+			var imgs = document.getElementsByTagName('img');
+			for(var i = 0; i < imgs.length; i++){
+				imgs[i].onclick = function(){
+					//this.src 就是我们点击图片的路径
+					document.body.style.backgroundImage = 'url(' + this.src + ')';
+					document.body.style.backgroundSize = '100%';//使得图片自适应
+					document.body.style.backgroundRepeat = 'no-repeat';
+				}
+			}
+		</script>
+	</body>
+</html>

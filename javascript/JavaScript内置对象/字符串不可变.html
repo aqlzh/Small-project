@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			//字符串的不可变 指的是里面的值不可变 虽然看上去可以改变内容
+			//但其实是地址变了 内存中开辟了一个内存空间
+			var str = 'andy';
+			console.log(str);
+			str = 'red';//实际上是新开辟了一块内存空间 然后 str指向这块空间
+			console.log(str);
+			
+			//因为字符串 的不可变 所以不要大量的拼接字符串
+			//会占用大量内存资源
+			var str = '';
+			for(var i = 1; i <= 1000000; i++){
+				str += i;
+			}
+			console.log(str);
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

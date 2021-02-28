@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div id="demo" index="2" class="name"></div>
+		<script>
+			var div = document.getElementById('demo');
+			//1.element.属性 = '值' 设置内置的属性值
+			div.id = 'test';
+			div.className = 'navs';
+			console.log(div.id);
+			console.log(div.className);
+			//2.element.setAttribute('属性','值');主要针对设置自定义属性值
+			div.setAttribute('index','2');
+			div.setAttribute('class','footer');
+			console.log(div.getAttribute('id'));
+			console.log(div.getAttribute('class'));
+			
+			//移除属性
+			div.removeAttribute('index');
+		</script>
+	</body>
+</html>

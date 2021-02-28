@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script></script>
+	</head>
+	<body>
+		<script>
+			//window.onload 窗口加载事件 当文档内容完全加载完毕会触发该事件
+			//(包括图像 脚本文件  CSS文件)，就调用 处理函数
+			/* 注意：
+				 有了window.onload 就可以吧JS代码写到页面元素的上方 因为onload是
+				 等页面内容全部加载完毕 再去执行处理函数
+				 window.onload 传统注册事件只能写一次  如果有多个 会议最后一个window.onload为准
+				 如果使用addEventListener则没有限制 可以注册多个
+			 */
+			/* window.onload = function(){
+				var btn = document.querySelector('button');
+				btn.addEventListener('click',function(){
+					alert('点击我');
+				})
+			} */
+			window.addEventListener('load',function(){
+				var btn = document.querySelector('button');
+				btn.addEventListener('click',function(){
+					alert('点击我');
+				})
+			})
+			window.addEventListener('load',function(){
+				alert('22');
+			})
+			
+			/* DOMContentLoaded 事件触发时 仅当DOM加载完毕 不包括样式表 图片 flash等
+				ie9以上才支持
+				如果页面的图片很多的话 从用户访问到onload触发可能需要较长时间
+				交互效果就不能实现 必然影响用户体验 此时用DOMContentLoaded事件比较合适
+			 */
+			document.addEventListener('DOMContentLoaded',function(){
+				alert('33');
+			})
+		</script>
+		<button>点击</button>
+		<!-- 以前的代码  必须是JS代码要在HTML代码之后 
+		<button>点击</button>
+		<script>
+			var btn = document.querySelector('button');
+			btn.addEventListener('click',function(){
+				alert('点击我');
+			})
+		</script>
+		-->
+	</body>
+</html>

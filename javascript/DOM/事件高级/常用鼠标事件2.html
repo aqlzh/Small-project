@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			body{
+				height: 3000px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- event对象代表事件的状态 跟事件相关的一系列信息的集合
+		  现阶段我们主要是用鼠标事件对象 MouseEvent和键盘对象KeyborderEvent
+		  e.clientX----返回鼠标相对于浏览器窗口可视区的X坐标
+		  e.clientY----返回鼠标相对于浏览器窗口可视区的Y坐标
+		  e.pageX------返回鼠标相对于文档页面的X坐标 IE9+支持
+		  e.pageY------返回鼠标相对于文档页面的Y坐标 IE9+支持
+		  e.screenX----返回鼠标相对于电脑屏幕的X坐标
+		  e.screenY----返回鼠标相对于电脑屏幕的Y坐标
+		 -->
+		 <script>
+			 document.addEventListener('click',function(e){
+				 // client 鼠标在可视区的坐标
+				 console.log(e.clientX);
+				 console.log(e.clientY);
+				 console.log('-----------');
+				 // page 鼠标在可视区的坐标
+				 console.log(e.pageX);
+				 console.log(e.pageY);
+				 console.log('-----------');
+				 // screen 鼠标在可视区的坐标
+				 console.log(e.screenX);
+				 console.log(e.screenY);
+			 })
+		 </script>
+	</body>
+</html>

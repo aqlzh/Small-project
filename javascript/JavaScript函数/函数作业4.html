@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			function isPrime(num){
+				var cout = 0;
+				for(var i = 2; i <= num; i++){
+					if(num % i == 0){
+						cout++;
+					}
+				}
+				if(cout > 1){
+					return false;
+				}
+				else
+					return true;
+			}
+			var num = prompt('请输入要判断的值：');
+			var re = isPrime(num);
+			alert(num + '不是素数：' + re);
+		</script>
+	</head>
+	<body>
+		<!-- 4.写一个函数用户输入 一个数判断是否是素数 并返回弹出值 -->
+	</body>
+</html>

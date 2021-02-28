@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		
+		<script>	
+			class Father{
+				say(){
+					console.log('father');
+				}
+			}
+			class Son extends Father{
+				say(){
+					//console.log('son');
+					console.log(super.say());//显示调用父类的方法
+					//super.say()就是调用父类中的普通函数
+				}
+			}
+			var son = Son();
+			son.say();//son
+			/* 继承中 如果实例化子类输出一个方法 先看子类是否有这个方法 如果有就执行子类的
+				如果子类中没有 就去查找父类有没有这个方法 如果有就执行父类的 (相当于 就近原则)
+			 */
+		</script>
+	</body>
+</html>

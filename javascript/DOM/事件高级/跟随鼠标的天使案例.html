@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			img{
+				position: absolute;
+				width: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="../img/2019366.jpg" alt="">
+		<script>
+			var pic = document.querySelector('img');
+			document.addEventListener('mousemove',function(e){
+				var x = e.pageX;
+				var y = e.pageY;
+				console.log('x坐标是' + x,'y坐标是' + y);
+				//必须要加上px单位
+				pic.style.top = y - 30 + 'px';
+				pic.style.left = x - 40 + 'px';
+			})
+		</script>
+	</body>
+</html>

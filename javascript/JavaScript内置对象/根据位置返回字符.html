@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			//charAt(index) 根据位置返回字符 index就是索引号
+			var str = 'andy';
+			console.log(str.charAt(3));
+			//遍历所有的字符
+			for(var i = 0; i < str.length; i++){
+				console.log(str.charAt(i));
+			}
+			//charCodeAt(index) 返回相应索引号的字符对应的ASCII码值 
+			//目的：判断用户按下了那个键
+			console.log(str.charCodeAt(0));
+			//3.str[index] H5新增的 可能会出现兼容性问题
+			console.log(str[0]);//与charAt等效
+		</script>
+	</head>
+	<body>
+		<!-- 根据位置返回字符 -->
+	</body>
+</html>

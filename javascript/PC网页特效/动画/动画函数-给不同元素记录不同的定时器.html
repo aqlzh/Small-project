@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			div{
+				position: absolute;
+				left: 0;
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+			}
+			span{
+				position: absolute;
+				top: 200px;
+				left: 0;
+				display: block;
+				width: 150px;
+				height: 150px;
+				background-color: purple;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 动画函数给不同元素记录不同定时器
+			 如果多个元素都使用这个动画函数 每次都要var声明定时器 
+			 我们可以给不同的元素使用不同的定时器(自己专门用自己的定时器)
+			 核心原理：利用JS是一门动态语言 可以很方便的给当前对象添加属性
+		 -->
+		<button>按下夏雨荷才走</button>
+		 <div></div>
+		 <span>夏雨荷</span>
+		<script>
+			//给不同的元素指定不同的对象  即给传入的动画对象添加一个属性timer
+			function animate(obj,target){
+				clearInterval(obj.timer);//先把原先的定时器清除 在开启新的定时器 保证只有一个定时器执行
+				obj.timer = setInterval(function(){
+					if(obj.offsetLeft >= target){
+						clearInterval(timer);
+					}
+					obj.style.left = obj.offsetLeft + 1 + 'px';
+				},30);
+			}
+			var div = document.querySelector('div');
+			var span = document.querySelector('span');
+			var btn = document.querySelector('button');
+			//调用函数
+			animate(div,400);
+			//当我们不断点击按钮 这个元素熟读会越来越快 因为开启太多定时器
+			//解决方案就是让我们元素只有一个定时器执行
+			btn.addEventListener('click',function(){
+				animate(span,500);
+			});
+			
+		</script>
+	</body>
+</html>

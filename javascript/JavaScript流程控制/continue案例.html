@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			var sum = 0;
+			for(var i = 1; i <= 100; i++){
+				if(i % 7 == 0){
+					continue;
+				}
+				sum += i;
+			}
+			console.log(sum);
+		</script>
+	</head>
+	<body>
+		<!-- continue是退出本次循环 转去执行下一循环
+			 求1-100之间 除了能被7整除之外的整数和
+		 -->
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			div{
+				position: absolute;
+				left: 0;
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+			}
+			span{
+				position: absolute;
+				top: 200px;
+				left: 0;
+				display: block;
+				width: 150px;
+				height: 150px;
+				background-color: purple;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 动画函数简单封装
+			 注意函数需要传递两个参数 动画对象和移动到的距离
+		 -->
+		  <div></div>
+		  <span></span>
+		<script>
+			//简单动画封装 obj 目标对象 target 目标位置
+			function animate(obj,target){
+				var timer = setInterval(function(){
+					if(obj.offsetLeft >= target){
+						clearInterval(timer);
+					}
+					obj.style.left = obj.offsetLeft + 1 + 'px';
+				},30);
+			}
+			var div = document.querySelector('div');
+			var span = document.querySelector('span');
+			//调用函数
+			animate(div,400);
+			animate(span,500);
+		</script>
+	</body>
+</html>

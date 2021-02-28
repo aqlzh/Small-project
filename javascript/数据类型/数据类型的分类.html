@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			var num = 10;
+			var pi = 3.14;//都是数字型
+			//八进制 0-7 我们程序里面数字前面加0 表示八进制
+			var num1 = 010;
+			console.log(num1);
+			//十六进制 0-9 a-f 我们程序里面数字前面加0x 表示十六进制
+			var num2 = 0x15;
+			console.log(num2);
+			//数字型的最大值
+			console.log(Number.MAX_VALUE);
+			//数字型的最小值
+			console.log(Number.MIN_VALUE);
+			//数字型的三个特殊值
+			//ifinity 代表无穷大 大于任何数值
+			//-infinity 代表无穷小 小于任何数值
+			//NaN Not a number 代表一个非数值
+			console.log(Number.MAX_VALUE*2);//输出为infinity
+			console.log(-Number.MAX_VALUE*2);//输出为-infinity
+			console.log('pink'-100);//输出为NaN
+			
+			//isNaN()这个方法用来判断非数字 并且返回一个值
+			//如果是一个数字 返回false 如果是非数值返回true
+			console.log(isNaN(25));
+			console.log(isNaN('sndj'));
+		</script>
+	</head>
+	<body>
+		<!-- 数据类型的分类
+			 JS把数据类型分为两类：
+			 简单数据类型(Number String Boolean Undefined Null)
+			 复杂数据类型(object)
+			 
+			 简单数据类型
+			 Number---数字型包含 整型值和浮点型值--默认值为0
+			 Boolean---布尔值类型 如true false 等价于1 0--默认值为false
+			 String---字符串类型 JS里面 字符串都带引号--默认值为""
+			 Undefined---var a;声明了变量但是没有给值 此时 a= undefined
+			 Null--- var a = null;声明了变量 a 为空值
+		 -->
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>123</li>
+		</ul>
+		<script>
+			//创建节点 元素节点
+			var li = document.createElement('li');
+			//添加节点 将节点放在哪个位置 node.appendChild(child)，node父级child子级
+			var ul = document.querySelector('ul');
+			ul.appendChild(li);//在ul后面追加
+			//node.insertBefore(child,指定元素)
+			//将一个节点添加到父节点指定子节点前面
+			var lili = document.createElement('li');
+			ul.insertBefore(lili,ul.children[0]);
+			
+		</script>
+	</body>
+</html>

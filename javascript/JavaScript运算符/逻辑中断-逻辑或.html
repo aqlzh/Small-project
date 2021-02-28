@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			console.log(123 || 456);//123 表达式1 为真 返回表达式1
+			console.log(123 || 456+8454);//123
+			console.log(0 || 456);//456 表达式1为假时 返回表达式2
+			//逻辑中断很重要 他会影响我们程序运行的结果
+			var num = 0;
+			console.log(123 || num++);//123
+			console.log(num);//num为0，因为123||num++ 123为真 所以返回123 之后的就不会执行
+		</script>
+	</head>
+	<body>
+		<!-- 逻辑或短路运算
+				语法：表达式1 || 表达式2
+				如果表达式1 结果为真 则返回的是表达式1
+				如果表达式1 结果为假 则返回的是表达式2
+		 -->
+	</body>
+</html>

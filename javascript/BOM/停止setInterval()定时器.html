@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script></script>
+	</head>
+	<body>
+		<!-- 停止setInterval()定时器
+			 window.clearInterval(intervalID);
+			 clearInerval()方法取消了先前通过调用setInterval()建立的定时器
+			 注意：
+			 window可以省略
+			 里面的参数是定时器的标识符
+		 -->
+		 <button class="begin">开启定时器</button>
+		 <button class="stop">停止定时器</button>
+		 <script>
+			 var begin = document.querySelector('.begin');
+			 var stop = document.querySelector('.stop');
+			 var timer = null;//必须声明为全局变量 否则局部变量stop获取不到
+			 begin.addEventListener('click',function(){
+				  timer = setInterval(function(){
+					 console.log('您好吗');
+				 },1000);
+			 })
+			 stop.addEventListener('click',function(){
+				 clearInterval(timer);
+			 })
+		 </script>
+	</body>
+</html>

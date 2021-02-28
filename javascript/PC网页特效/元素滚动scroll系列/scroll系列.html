@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+				padding: 10px;
+				border: 10px solid red;
+				overflow: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- scroll翻译过来就是滚动的 我们使用scroll系列的相关属性
+			 可以动态的得到该元素的大小 滚动距离
+			 element.scrollTop-----返回被卷去的上侧距离 返回数值不带单位
+			 element.scrollLeft-----返回被卷去的左侧距离 返回数值不带单位
+			 element.scrollWidth----返回自身的实际高度 不含边框 返回数值不带单位
+			 element.scrollHeight----返回自身的实际宽度 不含边框 返回数值不带单位
+		-->
+		<div>
+			我是内容我是内容我是内容
+			我是内容我是内容我是内容
+			我是内容我是内容我是内容
+			我是内容我是内容我是内容
+			我是内容我是内容我是内容
+			我是内容我是内容我是内容
+			我是内容我是内容我是内容
+			我是内容我是内容我是内容
+			我是内容我是内容我是内容
+			我是内容我是内容我是内容
+			我是内容我是内容我是内容
+			我是内容我是内容我是内容
+			我是内容我是内容我是内容
+			
+		</div>
+		<script>
+			var div = document.querySelector('div');
+			//虽然都包含padding 不包含border
+			console.log(div.scrollHeight);//得到的是内容的大小
+			console.log(div.clientHeight);//得到的是盒子的大小
+			//scroll是滚动事件
+			div.addEventListener('scroll',function(){
+				console.log(div.scrollTop);
+			})
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<!-- JS是单线程
+			 JavaScript语言的一大特点就是单线程 也就是说 同一时间只能做一件事
+			 这是因为JavaScript这门脚本语言诞生的使命所致---JavaScript是为处理页面中用户的交互
+			 以及操作DOM而诞生的 比如我们对某个DOM元素进行添加和删除操作 不能同时进行 
+			 应该先添加后删除
+			 单线程就意味着 所有任务需要排队 前一个任务结束 才会执行后一个任务
+			 这样所导致的问题是：如果JS执行事件过长 这样就会造成页面的渲染不连贯 
+			 导致页面渲染加载阻塞的感觉
+			 
+			 为了解决这个问题 利用多核CPU的计算能力 HTML5提出Web Woker标准 
+			 允许JavaScript脚本创建多个线程 于是JS 出现了同步和异步
+			 同步 --前一个任务结束后再执行后一个任务 出现的执行顺序与任务的排列顺序是一致的
+			 同步的 比如 做饭的同步做法：我们要烧水做饭 等水开了(10分钟) 再去切菜 炒菜
+			 异步----你在做一件事时  因为这件事会花费很长时间 在做这件事的同时 你还可以去处理其他事情
+			 比如做饭的异步：我们在烧水的同时 利用这10分钟 去切菜炒菜
+			 本质区别：这条流水线上各个流程的执行顺序不同
+			 
+			 同步任务：
+			 同步任务都在主线程上执行 形成一个执行线
+			 异步任务：
+			 JS的异步是通过回调函数实现的
+			 一般而言 异步任务有以下三种类型
+			 1.普通事件 如click resize等
+			 2.资源加载 如load error等
+			 3.定时器 包括 setTimeout setInterval等
+			 异步任务相关回调函数 添加到任务队列中(任务队列也称为消息队列)
+			 
+			 JS执行机制
+			 1.先执行执行栈中的同步任务
+			 2.异步任务(回调函数)放入任务队列中
+			 3.一旦执行战争的所有同步任务执行完毕 系统就会按次序读取任务队列中的异步任务
+			 于是被读取的异步任务结束等待状态 进入执行栈 开始执行
+		 -->
+		<script>
+			console.log(1);
+			setTimeout(function(){
+				console.log(3);
+			},0);
+			console.log(2);
+		</script>
+	</body>
+</html>

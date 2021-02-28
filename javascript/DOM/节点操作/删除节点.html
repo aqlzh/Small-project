@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<button>删除</button>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<script>
+			var ul = document.querySelector('ul');
+			//删除元素 node.removechild(child)
+			var btn = document.querySelector('button');
+			btn.onclick = function(){
+				if(ul.children.length == 0){
+					//alert('没有元素可供删除');
+					this.disabled = true;
+				}
+				else{
+					ul.removeChild(ul.children[0]);
+				}
+				
+			}
+		</script>
+	</body>
+</html>

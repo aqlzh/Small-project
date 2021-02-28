@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	</head>
+	<body>
+		<!-- 通过HTML5新增的方法获取
+			 1.document.getElementsByClassNmae('类名')；//根据类名返回元素对象
+			 2.document.querySelector('选择器');、、根据陈指定选择器返回第一个元素对象
+		 -->
+		 <div class="box">盒子</div>
+		 <div class="box">盒子</div>
+		 <div id="nav">
+		 	<ul>
+		 		<li>产品</li>
+		 		<li>产品</li>
+		 	</ul>
+		 </div>
+		 <script>
+			 //1.使用类名获取元素
+			 var boxs = document.getElementsByClassName('box');
+			 console.log(boxs);
+			 //2.querySelector 返回指定选择器的第一个对象 里面的选择器要加符号 .box #nav
+			 var firstBox = document.querySelector('.box');
+			 console.log(firstBox);
+			 var nav = document.querySelector('#nav');
+			 console.log(nav);
+			 var li = document.querySelector('li');
+			 console.log(li);
+			 //3.querySelectorAll返回指定选择器的所有元素的集合
+			 var allBox = document.querySelectorAll('.box');
+			 console.log(allBox);
+		 </script>
+	</body>
+</html>

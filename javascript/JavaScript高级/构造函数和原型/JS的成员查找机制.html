@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		
+		<script>
+			function Star(uname,age){
+				this.uname = uname;
+				this.age = age;
+			}
+			Star.prototype.sing = function(){
+				console.log(我会唱歌)
+			}
+			//Star.prototype.sex = '女';//在原型对象中有sex属性 就输出 没有就到Object原型对象中找
+			//Object.prototype.sex = '男';//有就输出  没有就便是没有这个属性 返回undefined 因为Object是最顶层的
+			var ldh = new Star('刘德华',18);
+			//ldh.sex = '男';//1.先到对象里面去找 是否有这个属性 有输出 
+							//没有就到 Star原型对象中找
+			console.log(ldh.sex);//如果对象本身 Star原型对象 Object原型对象中都有这个属性
+			//优先使用对象本身的 因为是从对象本身开始查找的
+		</script>
+	</body>
+</html>

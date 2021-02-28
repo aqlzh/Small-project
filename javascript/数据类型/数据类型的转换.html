@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			//把数字型转换为字符串型
+			var num = 10;
+			var str = num.toString();
+			console.log(typeof str);
+			console.log(String(num));//相当于强制类型转换
+			console.log(num + '');
+			
+			//将字符型转换为数值型
+			var age = prompt('请输入你的年龄');//获取到的数据是字符串型
+			console.log(age);
+			console.log(parseInt(age));
+			console.log(parseInt('3.14'));//3  取整
+			console.log(parseInt('120px12'));//120 可以去掉遇到第一个非数字之后的所有值
+			console.log(parseFloat(age));
+			console.log(Number(age));
+			var str = '123';
+			console.log(Number(str));
+			console.log(Number('12'));
+			
+			console.log(age - 0);//18数字型
+			console.log('123' - '120');//3
+			
+			//转换为布尔型
+			console.log('');
+			console.log(0);
+			console.log(NaN);
+			console.log(null);
+			console.log(undefined);
+			//以上5个值会被转换为false 其他都会被转换为true
+			console.log('12');
+			console.log(12);
+		</script>
+	</head>
+	<body>
+		<!-- 使用表单 prompt获取过来的数据默认是字符串类型的 此时
+			 就不能直接简单的进行加法运算 而是需要转换变量的数据类型
+			 通俗来说就是 把一种数据类型的变量转换成另一种数据类型
+			 通常会实现3中方式的转换：
+				转换为字符串 类型
+				转换为数字型
+				转换为布尔型
+			转换为字符串
+				tostring()--转成字符串 
+				string()--强制类型转换
+				加号拼接字符串--和字符串拼接的结果都是字符串
+			转换为数字型
+				parselInt(string)函数---将string类型转换为整数数值型
+				parseFloat(string)函数---将string类型转换成浮点数数值型
+				Number()强制转换函数----将string类型转换为数值型
+				js隐式转换(- * /)---利用算数运算隐式转换为数值型
+			转换为布尔型
+				Boolean()函数---其他类型转成布尔值
+				代表空，否定的值会被转换成false 如 '' 0 NaN null undefined
+				其余值都会被转换为true
+		 -->
+	</body>
+</html>

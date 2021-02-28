@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			.tab_list{
+				width: 1200px;
+				height: 30px;
+			}
+			.tab_list ul li{
+				float: left;
+				list-style: none;
+				width: 150px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				background-color: #ccc;
+				cursor: pointer;
+			}
+			.tab_list .current{
+				background-color: red;
+			}
+			.tab_con .item{
+				margin-left: 100px;
+				display: none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="tab">
+			<div class="tab_list">
+				<ul>
+					<li class="current">商品介绍</li>
+					<li>规格与保障</li>
+					<li>售后保障</li>
+					<li>商品评价(50000)</li>
+					<li>手机社区</li>
+				</ul>
+			</div>
+			<div class="tab_con">
+				<div class="item" style="display: block;">商品介绍模块内容</div>
+				<div class="item">规格与包装模块内容</div>
+				<div class="item">售后保障模块内容</div>
+				<div class="item">商品评价模块内容</div>
+				<div class="item">手机社区模块内容</div>
+			</div>
+		</div>
+		<script>
+			var tab_list = document.querySelector('.tab_list');
+			var lis = tab_list.querySelectorAll('li');
+			var item = document.querySelectorAll('.item')
+			for(var i = 0; i < lis.length; i++){
+				lis[i].setAttribute('index',i);
+				lis[i].onclick = function(){
+					for(var i = 0; i <lis.length; i++){
+						lis[i].className = '';
+					}
+					this.className = 'current';
+					
+					//显示下面的内容
+					//核心思路 给上面的tab_list里面的所有li添加自定义属性 表示从0开始
+					var index = this.getAttribute('index');
+					for(var i = 0; i < item.length; i++){
+						item[i].style.display = "none";
+					}
+					item[index].style.display = 'block';
+				}
+			}
+		</script>
+	</body>
+</html>

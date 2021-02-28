@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<textarea ></textarea>
+		<button>发布</button>
+		<ul>
+			
+		</ul>
+		<script>
+			//获取元素
+			var text = document.querySelector('textarea');
+			var btn = document.querySelector('button');
+			var ul = document.querySelector('ul');
+			//注册事件
+			btn.onclick = function(){
+				if(text.value == ''){
+					alert('您没有输入内容');
+				}
+				else{
+					var li = document.createElement('li');
+					li.innerHTML = text.value;
+					//ul.appendChild(li);
+					ul.insertBefore(li,ul.children[0]);
+				}
+				
+			}
+		</script>
+	</body>
+</html>

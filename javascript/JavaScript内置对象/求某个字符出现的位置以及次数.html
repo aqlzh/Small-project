@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			var str = 'abcoefoxyozzopp';
+			var index = str.indexOf('o');
+			var num = 0;
+			while(index !== -1){
+				console.log(index);
+				num++;
+				index = str.indexOf('o',index + 1);
+			}
+			console.log('o出现的次数为：' + num);
+			//课后作业 ['red','blue','red','green','pink','red'];求red出现的位置及次数
+			 var str1 = ['red','blue','red','green','pink','red'];
+			 var index1 = str1.indexOf('red');
+			 var num1 = 0;
+			while(index1 !== -1){
+				 console.log(index1);
+				 num1++;
+				 index1 = str1.indexOf('red',index1 + 1);
+			 }
+			 console.log('red出现的次数为：' + num1);
+			 /* for(var i = 0; i < str1.length; i++){
+				 if(str1[i] == 'red'){
+					 num1++;
+					 console.log(i);
+				 }
+			 }
+			 console.log('red出现的次数为：' + num1); */
+		</script>
+	</head>
+	<body>
+		<!-- 查找字符串"abcoefoxyozzopp"中所有o出现的位置以及次数
+			 核心算法 先查找第一个o出现的位置 然后只要indexOf 返回的结果不是 -1 
+			 就继续往后查找
+			 因为indexOf 只能查找到第一个 所以后面的查找 一定是当前索引加1 从而继续查找
+		 -->
+	</body>
+</html>

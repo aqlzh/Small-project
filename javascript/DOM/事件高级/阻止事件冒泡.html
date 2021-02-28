@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			.father{
+				width: 400px;
+				height: 400px;
+				background-color: purple;
+			}
+			.son{
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 阻止事件冒泡
+			 事件冒泡本身的特性 会带来坏处 也会带来好处 需要灵活掌握
+			 标准写法：利用事件对象里面的stopPropagation()方法
+			 非标准写法：ie678 利用事件对象的canceBulbble属性
+		 -->
+		 <div class="father">
+		 	<div class="son">son盒子</div>
+		 </div>
+		<script>
+			var son = document.querySelector('.son');
+			son.addEventListener('click',function(e){
+				alert('son');
+				//e.stopPropagation();//不在向上传播 有兼容性问题
+				e.cancelBubble = true;
+			},false)
+			var father = document.querySelector('.father');
+			father.addEventListener('click',function(){
+				alert('father');
+			},false)
+		</script>
+	</body>
+</html>

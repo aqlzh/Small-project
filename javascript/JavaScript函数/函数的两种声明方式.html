@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			function f1(){
+				console.log('方式一');
+			}
+			var f2 = function(){
+				console.log('方式二');
+			}
+			//f2是变量名 不是函数名
+			//函数表达式 声明方式更声明变量差不多 只不过变量里面存的是值
+			//而函数表达式存的是函数
+			f1();
+			f2();
+		</script>
+	</head>
+	<body>
+		<!-- 函数的两种声明方式
+			 1.利用function关键字自定义函数(命名函数)
+			 function fn(){
+				 
+			 }
+			 2.函数表达式(匿名函数)
+			 var 变量名 = function(){};
+			 
+			 两种声明 得到的函数最后的调用方式是一样的
+			 都是函数名()；
+		 -->
+	</body>
+</html>

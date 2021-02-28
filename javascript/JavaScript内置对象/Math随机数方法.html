@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			console.log(Math.random());
+			//得到一个两数之间的随机整数 包含着两个数
+			//Math.floor(Math.random() * (max - min + 1)) + min;
+			function getRandom(min,max){
+				return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+			console.log(getRandom(1,10));
+			
+			//随机点名
+			var arr = ['张三','张三丰','张三疯子','李四','李思思'];
+			console.log(arr[getRandom(0,arr.length-1)]);
+		</script>
+	</head>
+	<body>
+		<!-- Math 对象 随机数方法 random() 返回一个随机的小数 取值区间[0,1)
+			 这个方法里面不跟参数
+		 -->
+	</body>
+</html>

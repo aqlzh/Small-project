@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<!-- window对象给我们提供了一个history对象 与浏览器历史记录进行交互 该对象包含用户
+			 (在浏览器窗口中)访问过的URL
+			 history常用方法
+			 back()-----可以后退功能
+			 forward()--前进功能
+			 go(参数)---前进后退功能 参数如果是1 前进一个页面 如果是-1 后退一个页面
+		 -->
+		 <a href="list.html">点击我去往列表页</a>
+		 <button>前进</button>
+		<script>
+			var  btn = document.querySelector('button');
+			btn.addEventListener('click',function(){
+				//history.forward();
+				history.go(1);
+			})
+		</script>
+	</body>
+</html>

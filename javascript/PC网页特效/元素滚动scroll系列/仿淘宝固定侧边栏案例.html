@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			.w{
+				padding: 0;
+				margin: 0 auto;
+				margin-top: 10px;
+				width: 1200px;
+				text-align: center;
+			}
+			.header{
+				height: 200px;
+				background-color: purple;
+			}
+			.banner{
+				height: 400px;
+				background-color: skyblue;
+			}
+			.slider-bar{
+				position: absolute;
+				top: 520px;
+				left: 1360px;
+				width: 50px;
+				height: 100px;
+				background-color: pink;
+				z-index: 1;
+			}
+			.main{
+				height: 1000px;
+				background-color: yellowgreen;
+			}
+			span{
+				display: none;
+				position: absolute;
+				bottom: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slider-bar">
+			<span class="goback">返回顶部</span>
+		</div>
+		<div class="header w">头部区域</div>
+		<div class="banner w">banner区域</div>
+		<div class="main w">主体部分</div>
+		<script>
+			//1.获取元素
+			var sliderbar = document.querySelector('.slider-bar');
+			var banner = document.querySelector('.banner');
+			var main = document.querySelector('.main');
+			var goback = document.querySelector('.goback');
+			//页面滚动事件 scroll
+			document.addEventListener('scroll',function(){
+				//console.log(1);
+				//window.pageYOffset 页面被卷去的头部
+				//console.log(window.pageYOffset);
+				//当页面被卷去 的头部大于等于 220 侧边栏就要改为固定定位
+				if(window.pageYOffset >= banner.offsetTop){
+					sliderbar.style.position = 'fixed';
+					sliderbar.style.top = sliderbar.offsetTop - banner.offsetTop + 'px';
+				}else{
+					sliderbar.style.position = 'absolute';
+					sliderbar.style.top = 520 + 'px';
+					
+				}
+				if(window.pageYOffset >= main.offsetTop){
+					goback.style.display = 'block';
+				}else{
+					goback.style.display = 'none';
+					
+				}
+			})
+		</script>
+	</body>
+</html>

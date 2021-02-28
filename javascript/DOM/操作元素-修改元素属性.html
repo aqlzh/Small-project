@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script></script>
+		<style>
+			img{
+				width: 200px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="ldh">VPN</button>
+		<button id="zxy">网络教学平台</button> <br>
+		<img src="img/vpn.jpg" alt="" title="vpn">
+		<script>
+			//修改元素属性 src
+			//获取元素
+			var ldh = document.getElementById('ldh');
+			var zxy = document.getElementById('zxy');
+			var img = document.querySelector('img');
+			//注册事件 处理程序
+			zxy.onclick = function(){
+				img.src = 'img/wljxpt.jpg';
+				img.title = '网络教学平台';
+			}
+			ldh.onclick = function(){
+				img.src = 'img/vpn.jpg';
+				img.title = 'vpn';
+			}
+		</script>
+	</body>
+</html>

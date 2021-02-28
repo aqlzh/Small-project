@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			//作用域链
+			var num = 10;
+			function fn(){//外部函数
+				var num = 20;
+				function fun(){//内部函数
+					console.log(num);//输出的是20还是10呢？ 输出的是20 
+					//采用的方法是链式查找 简单来说 就是就近原则
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<!-- 作用域链
+			 只要是代码 就至少有一个作用域
+			 写在函数内部的内部作用域
+			 如果函数中还有函数 那么在这个作用域中就又可以诞生一个作用域
+			 根据在内部函数可以访问外部函数变量的这种机制 用链式查找决定哪些数据能被内部函数访问 
+			 就称为作用域链
+		 -->
+	</body>
+</html>

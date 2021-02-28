@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			.box{
+				width: 300px;
+				height: 300px;
+				background-color: pink;
+				margin: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 案例分析
+			 我们在盒子里面点击 想要得到鼠标距离里盒子左右的距离
+			 首先得到鼠标在页面中的坐标
+			 其次得到盒子在页面中的坐标
+			 用鼠标距离页面的坐标减去盒子在页面中的距离 得到鼠标在盒子内的坐标
+		 -->
+		<div class="box"></div>
+		<script>
+			 var box = document.querySelector('.box');
+			 box.addEventListener('click',function(e){
+				 console.log(e.pageX);
+				 console.log(e.pageY);
+				 console.log(box.offsetLeft);
+				 console.log(box.offsetTop);
+				 var x = e.pageX - this.offsetLeft;
+				 var y = e.pageY - this.offsetTop;
+				 this.innerHTML = 'x坐标是' + x + 'y坐标是' + y;
+			 })
+		</script>
+	</body>
+</html>

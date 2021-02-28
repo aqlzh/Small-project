@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			li{
+				list-style: none;
+			}
+			.box{
+				width: 250px;
+				margin: 100px auto;
+			}
+			.box li{
+				float: left;
+				width: 24px;
+				height: 24px;
+				background-color: pink;
+				margin: 15px;
+				background: url(img/TB1eiXTXlTH8KJjy0FiXXcRsXXa-24-595.png) no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<script>
+			var lis = document.getElementsByTagName('li');
+			for(var i = 0; i < lis.length; i++){
+				var index = i * 44;
+				lis[i].style.backgroundPosition = '0 -' + index + 'px';
+			}
+		</script>
+	</body>
+</html>

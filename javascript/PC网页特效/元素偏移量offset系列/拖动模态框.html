@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			body{
+				height: 2000px;
+			}
+			.lj{
+				height: 40px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			.lj a{
+				text-decoration: none;
+				color: #000000;
+			}
+			.login{
+				display: none;
+				position: relative;
+				width: 400px;
+				height: 200px;
+				background-color: pink;
+				margin: 100px auto;
+				text-align: center;
+				border-radius: 20px;
+				z-index: 1;
+			}
+			.login .uname,.password{
+				height: 40px;
+			}
+			.login .close{
+				position: absolute;
+				top: -10px;
+				right: -10px;
+				width: 40px;
+				height: 40px;
+				background-color: skyblue;
+				line-height: 40px;
+				font-size: 12px;
+				border-radius: 20px;
+				cursor: pointer;
+			}
+			button{
+				margin-top: 20px;
+				width: 80px;
+				height: 30px;
+			}
+			.mask{
+				display: none;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0,0,0,.3);
+			}
+			#title{
+				height: 20px;
+				cursor: move;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="lj"><a id="link" href="#">点击,跳转至登录页面</a></div>
+		<div class="login">
+			<label id="title">登录页面</label>
+			<div class="uname">
+				用户名：<input type="text" placeholder="请输入用户名" id="username">
+			</div>
+			<div class="password">
+				登录密码：<input type="password" placeholder="请输入登录密码" id="password">
+			</div>
+			<div class="close">关闭</div>
+		<button>登录</button>
+		</div>
+		<div class="mask"></div>
+		<script>
+			//1.获取元素
+			var login = document.querySelector('.login');
+			var mask = document.querySelector('.mask');
+			var link = document.querySelector('#link');
+			var close = document.querySelector('.close');
+			//2.点击弹出层这个链接link 让mask 和login 显示出来
+			link.addEventListener('click',function(){
+				mask.style.display = 'block';
+				login.style.display = 'block';
+			})
+			//3.点击关闭close 就隐藏mask和login
+			close.addEventListener('click',function(){
+				mask.style.display = 'none';
+				login.style.display = 'none';
+			})
+			//拖拽效果案例分析
+			/* 页面中拖拽的原理 ：鼠标按下并移动 之后松开鼠标
+			 触发事件是鼠标按下mousedown 鼠标移动mousemove 鼠标松开mouseup
+			 拖拽过程：鼠标移动过程中 获得最新的值赋给模态框的left和top 这样模态框就可以跟着鼠标走了
+			 鼠标按下触发的事件源是最上面一行 就是 id为title的
+			 鼠标的坐标减去鼠标在盒子内的坐标 才是莫泰框真正的位置
+			 
+			 */
+			var title = document.querySelector('#title');
+			//当我们鼠标按下后 就获得鼠标在盒子内的坐标
+			title.addEventListener('mousedown',function(e){
+				var x = e.pageX - login.offsetLeft;
+				var y = e.pageY - login.offsetTop;
+				//鼠标移动的时候 把鼠标在页面中的坐标减去鼠标在盒子内的坐标就是模态框的left和<optgroup>
+				document.addEventListener('mousemove',move)
+				function move (e){
+					login.style.left = e.pageX - x + 'px';
+					login.style.top = e.pageY - y + 'px';
+				}
+				//鼠标弹起就让鼠标移动事件移除
+				document.addEventListener('mouseup',function(){
+					document.removeEventListener('mousemove',move)
+				})
+			})
+		</script>
+	</body>
+</html>

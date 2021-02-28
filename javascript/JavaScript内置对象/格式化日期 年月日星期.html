@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			var date = new Date();
+			console.log(date.getFullYear());//返回当前时间的年份 2020
+			console.log(date.getMonth() + 1);//返回月份要比实际月份小一个月 (0~11)
+			console.log(date.getDate());//返回日期
+			console.log(date.getDay());//返回星期几 周一到周六(1~6) 但是周日是0
+			//我们写一个 2020年 12月 24日 星期四
+			var year = date.getFullYear();
+			var month = date.getMonth() + 1;
+			var dates = date.getDate();
+			var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+			var day = date.getDay();
+			console.log('今天是: ' + year + '年' + month + '月' + dates + '日' + arr[day]);
+		</script>
+	</head>
+	<body>
+		<!-- 格式化日期 年月日 -->
+	</body>
+</html>

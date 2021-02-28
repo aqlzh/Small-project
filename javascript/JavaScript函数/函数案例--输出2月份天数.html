@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			function backDay(){
+				var year = prompt('请输入年份：');
+				//直接在函数体内判断
+				if(year % 4 == 0 && year % 100 == 0 || year % 400 == 0){
+					alert('当前年份是闰年2月份有29天');
+				}
+				else{
+					alert('当前年份是平年2月份有28天');
+				}
+			}
+			function isRunYear(year){
+				//如果是闰年就 返回 true 否则 返回 false
+				var flag = false;
+				if(year % 4 == 0 && year % 100 == 0 || year % 400 == 0){
+					flag = true;
+				}
+				return flag;
+			}
+			function backDay1(){
+				var year = prompt('请输入年份：');
+				//利用函数相互调用判断
+				if(isRunYear(year)){
+					alert('当前年份是闰年2月份有29天');
+				}
+				else
+					alert('当前年份是平年2月份有28天');
+			}
+			backDay();
+			backDay1();
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

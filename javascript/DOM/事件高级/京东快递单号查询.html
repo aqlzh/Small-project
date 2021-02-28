@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			.seach{
+				position: relative;
+				top: 100px;
+				left: 200px;
+			}
+			.con{
+				display: none;
+				position: absolute;
+				top: -40;
+				width: 171px;
+				border: 1px solid rgba(0,0,0,.2);
+				box-shadow: 0 2px 2px rgba(0,0,0,.2);
+				padding: 5px 0;
+				font-size: 18px;
+				line-height: 20px;
+				color: #333;
+			}
+			.con::before{
+				content: '';
+				width: 0;
+				height: 0;
+				position: absolute;
+				top: 29px;
+				left: 20px;
+				border: 8px solid #000;
+				border-style: solid dashed dashed;
+				border-color: #fff transparent transparent;
+			}
+			.jd{
+				position: absolute;
+				top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 核心思想：
+			 快递单号输入内容时 上面的大好字体盒子 显示
+			 同时把快递单号里面的值(value)获取过来 赋值给con盒子(innerText)作为内容
+			 如果快递单号里面内容为空 则隐藏大号字体盒子
+			 注意 keydown 和 keypress 在文本框里面的特点:他们两个触发的时候 文字还没有落入文本框中
+		 -->
+		<div class="search">
+			<div class="con"></div>
+			<input type="text" placeholder="请输入您的快递单号" class="jd">
+		</div>
+		<script>
+			var con = document.querySelector('.con');
+			var jd_input = document.querySelector('.jd');
+			jd_input.addEventListener('keyup',function(){
+				console.log('输入内容了');
+				/* con.style.display = 'block';
+				con.innerHTML = this.value; */
+				if(this.value != ''){
+					con.style.display = 'block';
+					con.innerHTML = this.value;
+				}else{
+					con.style.display = 'none';
+				}
+			})
+			jd_input.addEventListener('blur',function(){
+				con.style.display = 'none';
+			})
+			jd_input.addEventListener('focus',function(){
+				if(this.value !== ''){
+					con.style.display = 'block';
+				}
+			})
+		</script>
+	</body>
+</html>

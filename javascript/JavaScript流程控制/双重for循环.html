@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			var i , j;
+			//五行五列
+			for(i = 1; i <= 5; i++){
+				var str = '';
+				for(j = 1; j <= 5; j++){
+					str += '☆';
+				}
+				console.log(str + '\n');
+			}
+			var str = '';
+			for(i = 1; i <= 5; i++){
+				for(j = 1; j <= 5; j++){
+					str += '☆';
+				}
+				str += '\n';
+			}
+			console.log(str);
+			//三角形
+			for(i = 10; i > 0; i--){
+				var str1 = '';
+				for(j = 1; j <= i; j++){
+					str1 += '☆';
+				}
+				console.log(str1 + '\n');
+			}
+			//n行n列
+			var n1 = prompt('输入行数');
+			var n2 = prompt('输入列数');
+			var str2 = '';
+			for(i = 1; i <= n1; i++){
+				for(j = 1; j <= n2; j++){
+					str2 += '☆';
+				}
+				str2 += '\n';
+			}
+			console.log(str2);
+		</script>
+	</head>
+	<body>
+		<!-- 五行五列的星星
+			 *****
+			 *****
+			 *****
+			 *****
+			 *****
+			 排列为三角形状的星星
+			 **********
+			 *********
+			 ********
+			 *******
+			 ******
+			 *****
+			 ****
+			 ***
+			 **
+			 *
+			 打印n行n列的星星
+		 -->
+	</body>
+</html>

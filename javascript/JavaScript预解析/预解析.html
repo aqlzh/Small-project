@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			//1问
+			//console.log(num);//报错 未定义
+			
+			//2问
+			console.log(num);//undefined 因为 var num 被提升到了 最前面 但是赋值操作没有提升 所以输出的是undefined
+			var num = 10;
+			//相当于执行了以下代码
+			/* var num;
+			console.log(num);
+			num = 10; */
+			
+			//3问
+			fn();//也可以调用  为什么 因为函数预解析把函数声明提升到了当前作用域的最前面
+			function fn(){
+				console.log(11);
+			}
+			//相当于执行了以下代码
+			/* function fn(){
+				console.log(11);
+			}
+			fn(); */
+			//fn();可以调用
+			//4问
+			fun();//报错 为什么 因为fun是变量名 所以先把 var fun；提前
+			var fun = function(){
+				console.log(22);
+			}
+			//相当于执行了以下代码
+			/* var fun;
+			fun();
+			fun = function(){
+				console.log(22);
+			} */
+			//fun();//可以调用
+		</script>
+	</head>
+	<body>
+		<!-- JavaScript代码是通过浏览器中的JavaScript解析器来执行的
+			 JavaScript解析器在运行JavaScript代码的时候分两步
+			 预解析 和 代码执行
+			 预解析：
+				JS引擎会把JS里面所有的 var 还有 function 提升到当前作用域的最前面
+			 代码执行：
+				按照代码的书写顺序从上往下执行
+				
+			预解析分为 变量预解析(变量提升) 和 函数预解析(函数提升)
+			变量预解析 
+				就是把所有的变量声明提升到当前的作用域的最前面  只提升变量声明 不提升赋值操作
+			函数预解析
+				就是把所有的函数声明提升到当前作用域的最前面 不调用函数
+		 -->
+	</body>
+</html>

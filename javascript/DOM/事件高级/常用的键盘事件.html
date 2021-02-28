@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script></script>
+	</head>
+	<body>
+		<!-- 常用的键盘事件
+			 1.keyup按键弹起触发
+			 2.keydown按键按下触发
+			 3.keypress按键按下触发
+		 -->
+		 <script>
+			 //1.keyup
+			 //传统事件注册
+			/* document.onkeyup = function(){
+				 console.log('弹起');
+			 } */
+			 document.addEventListener('keyup',function(){
+				 console.log('弹起')
+			 })
+			 //2.keydown  能识别功能键  比如 Ctrl shift 左右箭头
+			document.addEventListener('keydown',function(){
+				 console.log('按下down');
+			 })
+			 //3.keypress  不能识别功能键 比如 Ctrl shift 左右箭头
+			 document.addEventListener('keypress',function(){
+			 				 console.log('按下press');
+			 })
+			 //3个事件的执行顺序  keydown----keypress----keyup
+		 </script>
+	</body>
+</html>

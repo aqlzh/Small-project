@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			//方法一
+			var arr = [2,0,6,1,77,0,52,0,25,7];
+			var j = 0;
+			var newarr = [];
+			for(var i = 0; i < arr.length; i++){
+				if(arr[i] > 10){
+					newarr[j] = arr[i];
+					j++;
+				}
+			}
+			console.log(newarr);
+			//方法二
+			var newarr1 = [];
+			for(var i = 0; i < arr.length; i++){
+				if(arr[i] > 10){
+					newarr1[newarr1.length] = arr[i];
+					//newarr.length 不用自增 因为存放元素之后 他会自动增加
+				}
+			}
+			console.log(newarr1);
+		</script>
+	</head>
+	<body>
+		<!-- 要求将数组[2,0,6,1,77,0,52,0,25,7]中大于等于10 的元素选出来 放入新数组 -->
+	</body>
+</html>

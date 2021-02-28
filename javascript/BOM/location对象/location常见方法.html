@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<!-- location常见方法
+			 location.assign()------跟href一样 可以跳转页面(也称为重定向页面)
+			 location.replace()-----替换当前页面 因为不记录历史 所以不能后退页面
+			 location.reload()------重新加载页面 相当于刷新按钮 或者f5 如果参数为true前置刷新 ctrl+f5
+			 
+		 -->
+		 <button>点击</button>
+		<script>
+			var btn = document.querySelector('button');
+			btn.addEventListener('click',function(){
+				//记录浏览历史 可以后退
+				//location.assign('http://www.itcast.cn');
+				//不记录浏览历史 不能后退
+				location.replace('http://www.itcast.cn');
+				//重新加载页面 如果有参数 就是强制刷新
+				location.reload(true);
+			})
+		</script>
+	</body>
+</html>

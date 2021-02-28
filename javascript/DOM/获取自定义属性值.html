@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div id="demo" index="1"></div>
+		<script>
+			var div = document.querySelector('div');
+			//1.element.属性
+			console.log(div.id);
+			//2.element.getAttribute('属性名')；
+			console.log(div.getAttribute('id'));
+			//element.属性 获取的是内置属性值(元素本身自带的属性)
+			//element.getAttribute('属性')；主要获得自定义的属性 就是程序员自定义的属性
+			console.log(div.getAttribute('index'));
+		</script>
+	</body>
+</html>

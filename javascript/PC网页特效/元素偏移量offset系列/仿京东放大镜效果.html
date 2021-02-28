@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.pic{
+				width: 400px;
+				height: 250px;
+			}
+			img{
+				width: 100%;
+			}
+			.mask{
+				display: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 200px;
+				height: 150px;
+				background-color: yellow;
+				opacity: .5;
+				border: 1px solid #ccc;
+				cursor: move;
+			}
+			.big{
+				display: none;
+				position: absolute;
+				left: 410px;
+				top: 0;
+				width: 600px;
+				height: 375px;
+				background-color: transparent;
+				border: 1px solid #ccc;
+				overflow: hidden;
+			}
+			.big img{
+				position: absolute;
+				width: 800px;
+				height: 500px;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="pic">
+			<img src="../../DOM/img/2026699.jpg" alt="">
+			<div class="mask"></div>
+		</div>
+		<div class="big">
+			<img src="../../DOM/img/2026699.jpg" alt="" class="bigpic">
+		</div>
+		<script>
+			//1.鼠标经过小图片盒子 黄色的遮罩层 和大图片盒子显示 离开隐藏两个盒子
+			var pic = document.querySelector('.pic');
+			var mask = document.querySelector('.mask');
+			var big = document.querySelector('.big');
+			pic.addEventListener('mousemove',function(){
+				mask.style.display = 'block';
+				big.style.display = 'block';
+			})
+			pic.addEventListener('mouseout',function(){
+				mask.style.display = 'none';
+				big.style.display = 'none';
+			})
+			//黄色的遮罩层会跟随鼠标功能
+			//把鼠标坐标个遮罩层不合适 因为遮罩层坐标以父盒子为准
+			//首先是获得鼠标在盒子的坐标 之后吧数值给遮罩层作为left和top值
+			pic.addEventListener('mousemove',function(e){
+				//先计算出鼠标在盒子内的坐标
+				var x = e.pageX - this.offsetLeft;
+				var y = e.pageY - this.offsetTop;
+				//mask移动的距离
+				var maskX = x - mask.offsetWidth / 2;
+				var maskY = y - mask.offsetHeight / 2;
+				//限制遮罩层的移动
+				//如果x坐标小于0 就让他停在 0的位置
+				var maskxMAX = pic.offsetWidth - mask.offsetWidth;
+				var maskyMAX = pic.offsetHeight - mask.offsetHeight;
+				if(maskX <= 0){
+					maskX = 0;
+				}else if(maskX >= maskxMAX){
+					maskX = maskxMAX;
+				}
+				if(maskY <= 0){
+					maskY = 0;
+				}else if(maskY >= maskyMAX){
+					maskY = maskyMAX;
+				}
+				mask.style.left = maskX + 'px';
+				mask.style.top = maskY + 'px';
+				//大图片移动距离=遮罩层移动距离*大图片最大移动距离/遮罩层最大移动距离
+				var bigpic = document.querySelector('.bigpic');
+				var bigxMAX = bigpic.offsetWidth - big.offsetWidth;
+				var bigyMAX = bigpic.offsetHeight - big.offsetHeight;
+				var bigX = maskX * bigxMAX / maskxMAX;
+				var bigY = maskY * bigyMAX / maskyMAX;
+				bigpic.style.left = -bigX + 'px';
+				bigpic.style.top = -bigY + 'px';
+			})
+			
+		</script>
+	</body>
+</html>

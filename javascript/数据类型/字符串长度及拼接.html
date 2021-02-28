@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			//检测获取字符串的长度length
+			var str = 'my name is andy';
+			console.log(str.length);//15
+			//字符串的拼接  只要有字符串和其他类型的数据相拼接 最终结果为字符串
+			console.log('沙漠' + '骆驼');//沙漠骆驼
+			console.log('排名：' + 1);//排名：1
+			console.log(12 + 12);//24
+			console.log('12' + 12);//1212
+			
+			//字符串拼接加强
+			console.log('pink' + 18);
+			console.log('pink' + 18 +'岁');
+			var age = 18;
+			//变量不要写到字符串里面 是通过和字符串相连的方式实现的
+			console.log('pinkage岁');
+			console.log('pink' + age + '岁');
+			//
+		</script>
+	</head>
+	<body>
+		<!-- 字符串长度
+			 字符串是有若干个字符组成的 这些字符的数量就是字符串的长度
+			 通过字符串的length属性可以获取整个字符串的长度
+			 字符串的拼接
+			 多个字符串之间可以使用 + 进行拼接 其拼接方式为
+			 字符串 + 任何类型 = 拼接之后的新字符串
+			 拼接前会把与自负串相加的任何类型转换成字符串 在拼接成一个新的字符串
+			 
+			 + 号总结口诀：数值相加 字符相连
+		 -->
+	</body>
+</html>

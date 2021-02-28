@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			var arr = [5,26,4,7,9,30,12,45,98];
+			var temp;
+			/* for(var i = 0; i < arr.length; i++){
+				for(var j = i + 1; j < arr.length; j++){
+					if(arr[i] > arr[j]){
+						temp = arr[i];
+						arr[i] = arr[j];
+						arr[j] = temp;
+					}
+				}
+			} */
+			//冒泡排序
+			for(var i = 0; i < arr.length; i++){
+				for(var j = 0; j < arr.length - i - 1; j++){
+					if(arr[j] > arr[j + 1]){
+						temp = arr[j];
+						arr[j] = arr[j + 1];
+						arr[j + 1] = temp;
+					}
+				}
+			}
+			console.log(arr);
+		</script>
+	</head>
+	<body>
+		<!-- 冒泡排序是一种算法 把一系列的数据按照一定的顺序进行排列显示
+			 例如我们可以把数组[5,4,3,2,1]中的元素按照从小到大的顺序排序
+			 输出：1,2,3,4,5
+		 -->
+	</body>
+</html>

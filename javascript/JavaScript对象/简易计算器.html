@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			var option = prompt('欢迎使用简易计算器\n 1.加法运算;\n 2.减法运算;\n 3.乘法运算;\n 4.除法运算;\n 5.退出;\n 请输入您的选项：\n');
+			if(option == 5){
+				alert('正在退出简易计算器');
+			}
+			var num1 = prompt('请输入一个数值:');
+			var num2 = prompt('请输入一个数值');
+			var result = 0;
+			switch(option){
+				case '1':
+					result = parseFloat(num1) + parseFloat(num2);
+					break;
+				case '2':
+					result = parseFloat(num1) - parseFloat(num2);
+					break;
+				case '3':
+					result = parseFloat(num1) * parseFloat(num2);
+					break;
+				case '4':
+					result = parseFloat(num1) / parseFloat(num2);
+					break;
+			}
+			alert('结果为：' + result);
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

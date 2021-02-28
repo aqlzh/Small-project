@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			img{
+				width: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 案例分析
+			 根据系统不同时间判断 所以需要用到时间内置对象
+			 利用多分支语句来设置不同的图片
+			 需要一个图片并且更具时间修改图片 就需要使用操作元素 src属性
+		 -->
+		 
+		 <img src="" alt="">
+		 <div>上午好</div>
+		 <script>
+			 var img = document.querySelector('img');
+			 var div = document.querySelector('div');
+			 //得到当前的小时数
+			 var date = new Date();
+			 var h = date.getHours();
+			 if(h < 12){
+				 img.src = '';
+				 div.innerHTML = '上午好';
+			 }
+			 else if(h < 18){
+				 img.src = '';
+				 div.innerHTML = '下午好';
+			 }
+			 else{
+				 img.src = '';
+				 div.innerHTML = '晚上好';
+			 }
+		 </script>
+	</body>
+</html>

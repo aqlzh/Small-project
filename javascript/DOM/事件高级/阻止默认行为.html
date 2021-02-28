@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div>123</div>
+		<a href="#">百度</a>
+		<form action="">
+			<input type="submit" value="提交" name="sub">
+		</form>
+		<script>
+			//返回事件类型
+			var div = document.querySelector('div');
+			div.addEventListener('click',fn);
+			div.addEventListener('mouseover',fn);
+			div.addEventListener('mouseout',fn);
+			function fn(e){
+				console.log(e.type);
+			}
+			//组织默认行为(事件) 让链接不跳转 或者让提交阿牛不提交
+			var a = document.querySelector('a');
+			a.addEventListener('click',function(e){
+				e.preventDefault();//DOM标准写法
+			})
+			//传统注册方式
+			a.onclick = function(e){
+				//普通浏览器
+				//e.preventDefault();//方法
+				//低版本浏览器
+				//e.returnValue;//这是一个属性
+				//我们可以利用 returnfalse 也能组织默认行为 没有兼容性问题
+				//特点就是return 后面的代码不会执行 而且只适用于传统的注册方式
+				return false;
+			}
+		</script>
+	</body>
+</html>

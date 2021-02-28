@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			function getMax(){
+				var max = arguments[0]; 
+				for(var i = 1; i < arguments.length; i++){
+					if(max < arguments[i]){
+						max = arguments[i];
+					}
+				}
+				return max;
+			}
+			console.log(getMax(1,2,3));
+			console.log(getMax(1,2,3,4,8));
+			console.log(getMax(1,2,3,8,96,4));
+		</script>
+	</head>
+	<body>
+		<!--利用函数求任意个数的最大值 -->
+	</body>
+</html>

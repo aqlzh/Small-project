@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<!-- 父级节点
+			 node.parentNode
+		 -->
+		 <div class="box">
+			 <span class="erweima"></span>
+		 </div>
+		<script>
+			//以前的操作
+			var erweima = document.querySelector('.erweima');
+			var box = document.querySelector('.box');
+			//现在的操作 获取box div
+			erweima.parentNode;//得到的是里元素最近的的节点 如果找不到父节点返回为空
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			var money;
+			var balance = 100;
+			do{
+				var oper = prompt('请输入您要的操作：\n 1.存钱\n 2.取钱\n 3. 显示余额\n 4.退出');
+				if(oper == '1'){
+					money = prompt('输入存款金额');
+					balance += Number(money);//parseInt(balance + Number(money))
+					alert('余额为：' + balance);
+				}
+				else if(oper == '2'){
+					money = prompt('输入取款金额：');
+					if(money > balance){
+						alert('账户余额不足');
+					}
+					else{
+						balance -= money;
+						alert('余额为：' + balance);
+					}
+				}
+				else if(oper == '3'){
+					alert('余额为：' + balance);
+				}
+				else if(oper == '4'){
+					alert('退出系统');
+				}
+				else{
+					alert('没有此操作');
+					break;
+				}
+				/* switch(oper){
+					case '1':
+						money = prompt('输入存款金额');
+						balance += money;//parseInt(balance + Number(money))
+						alert('余额为：' + balance);
+						break;
+					case '2':
+						money = prompt('输入取款金额：');
+						if(money > 100){
+							alert('账户余额不足');
+						}
+						else{
+							balance -= money;
+							alert('余额为：' + balance);
+						}
+						break;
+					case '3':
+						alert('余额为：' + balance);
+						break;
+					case '4':
+						break;
+					default:
+						alert('没有此操作');
+				} */
+			}while(oper != '4')
+			
+		</script>
+	</head>
+	<body>
+		<!-- 简易ATM机
+			 里面先存有 100块钱
+			 如果存钱 就输入钱数加上先存的钱数 之后弹出显示余额提示框
+			 如果取钱 就减去 去的钱数 之后弹出显示余额提示框
+			 如果显示余额 就输出余额
+			 如果退出 弹出退出信息提示框
+		 -->
+	</body>
+</html>

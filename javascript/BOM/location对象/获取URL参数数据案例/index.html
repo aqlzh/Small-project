@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<script>
+			var div = document.querySelector('div');
+			console.log(location.search);//得到的是?uname=andy
+			//先去掉? substr('起始位置',截取几个字符)；
+			var params = location.search.substr(1);//存放的是 uname=andy
+			console.log(params);
+			//利用=把字符串分割维数组 split()
+			var arr = params.split('=');
+			console.log(arr);
+			div.innerHTML = arr[1] + '欢迎您！';
+		</script>
+	</body>
+</html>

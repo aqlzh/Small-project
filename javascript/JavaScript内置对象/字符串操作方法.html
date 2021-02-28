@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			var str = 'andy';
+			console.log(str.concat('red'));
+			
+			var str1 = '改革春风吹满地';
+			console.log(str1.substr(2,2));//从下标为2的开始取 取两个字符
+			console.log(str1.slice(2,4));
+			
+			//替换字符replace('被替换的字符','替换为的字符') 只会替换第一个要替换的字符
+			//并不会讲所有被替换的字符 全部替换为 替换为的字符
+			var str2 = 'andy';
+			console.log(str2.replace('a','b'));
+			
+			//字符串转换为数组 split('分隔符')  前面的join 是吧数组转换为字符串
+			//分隔符取决于 你的字符串使用什么符号隔开的
+			var str3 = 'red,pink,blue';
+			console.log(str3.split(','));
+			var str4 = 'red&pink&blue';
+			console.log(str4.split('&'));
+			
+		</script>
+	</head>
+	<body>
+		<!-- 字符串操作方法
+			 concat(str1,str2,str3...)---用于连接两个或多个字符串 拼接字符串 等效于 +  +更常用
+			 substr(start,length)----从start位置开始(索引号)，length 取的个数重点
+			 slice(start,end)---从start位置开始 截取到end位置 end取不到
+			 substring(start,end)---从start开始 截取到end位置 end取不到 基本和slice一致 但是不接收负值
+		 -->
+	</body>
+</html>

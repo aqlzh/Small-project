@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script></script>
+		<style>
+			div,p{
+				width: 500px;
+				height: 30px;
+				padding-left: 20px;
+				line-height: 30px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- JavaScript的DOM操作可以改变网页内容 结构和样式 
+			 我们可以利用DOM操作元素来改变元素里面的内容属性等
+			 注意以下都是属性：
+			 改变元素内容
+			 element.innerText;从起始位置到终止位置的内容 
+			 但它去除HTML标签 同时空格和换行也会去掉
+			 element.innerHTML;起始位置到终止位置的全部内容
+			 包括HTML标签 同时保留空格和换行
+		 -->
+		 <button type="button">显示当前时间</button>
+		 <div>某个时间</div>
+		 <p>1254</p>
+		 <script>
+			 //当我们点击了按钮  div里面的文字会发生变化
+			 var btn = document.querySelector('button');
+			 var div = document.querySelector('div');
+			 btn.onclick = function(){
+				// div.innerText = '2019-6-6';
+				div.innerText = getDate();
+			 }
+			 function getDate(){
+				 var date = new Date();
+				 var year = date.getFullYear();
+				 var month = date.getMonth()+1;
+				 var dates = date.getDate();
+				 var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+				 var day = date.getDay();
+				 return year + "-" + month + "-" + dates + "-" + arr[day];
+			 }
+			 //我们元素可以不用添加事件  当页面一出来是就可以显示时间
+			 var p = document.querySelector('p');
+			 p.innerText = getDate();
+		 </script>
+	</body>
+</html>

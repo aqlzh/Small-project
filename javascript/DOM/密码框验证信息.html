@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			div{
+				width: 600px;
+				margin: 100px auto;
+			}
+			
+			.massage{
+				display: inline-block;
+				width: 100px;
+				font-size: 12px;
+				color: #ccc;
+			}
+			.change1{
+				font-size: 14px;
+				color: red;
+			}
+			.change2{
+				font-size: 14px;
+				color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 案例分析
+			 首先判断事件 是失去焦点 onblur
+			 如果输入正确 则提示正确信息颜色为绿色
+			 如果错误则提示错误信息 颜色为红色
+			 里面样式变化太多 采用className修改样式
+		 -->
+		 <div>
+			 <input type="password">
+			 <p class="massage">请输入6-16为密码</p>
+		 </div>
+		 <script>
+			 var ipt = document.querySelector('input');
+			 var massage = document.querySelector('p');
+			 ipt.onblur = function(){
+				 if(ipt.value.length < 6 || this.value.length >16 ){
+					 massage.innerHTML = '输入错误 密码不是在6-16位之间';
+					 massage.className = 'massage change1';
+				 }
+				 else{
+					 massage.innerHTML = '输入正确！';
+					 massage.className = 'massage change2';
+				 }
+			 }
+		 </script>
+	</body>
+</html>

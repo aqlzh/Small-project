@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			var obj = {};//利用字面量创建了一个空的对象
+			var obj1 = {
+				uname: '张三丰',
+				age: 18,
+				sex: '男',
+				sayHi: function (){
+					console.log('hi~~');
+				}
+			}
+			//里面的属性或方法 我们采用键值对的形式
+			//多个属性或方法之间用逗号隔开
+			//方法冒号后面跟的是一个匿名函数
+			
+			//使用对象
+			//调用对象的属性 我们采取的是 对象名.属性名
+			console.log(obj1.uname);
+			//调用属性的另一种方法 对象名['属性名']
+			console.log(obj1['age']);
+			//调用对象的方法 sayHi 对象名.方法名() 方法名之后要加上小括号
+			obj1.sayHi();
+			
+			
+			//利用new Object创建对象
+			var obj2 = new Object();//创建了一个空的对象
+			//因为已经创建对象 所以可以追加属性和方法
+			obj2.uname = '张三丰';
+			obj2.age = 18;
+			obj.sex = '男';
+			//创建方法
+			obj2,.sayHi = function (){
+				console.log('hi~');
+			}
+			//利用等号赋值的方法添加 对象的属性和方法
+			//每个属性和方法之间用分号结束
+			//调用属性和方法与之前一致
+		</script>
+	</head>
+	<body>
+		<!-- 创建对象的三种方法
+			 1.利用字面量创建对象
+			 2.利用new Object创建对象
+			 3.利用构造函数创建对象
+			 
+			 对象字面量：就是花括号{}里面包含了表达这个具体事物的属性和方法
+			 
+			 
+			 
+		 -->
+	</body>
+</html>

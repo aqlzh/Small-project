@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<!-- 给元素添加事件 称为注册事件 或者绑定事件
+			 注册事件有两种方式：传统方式和方法监听注册方式
+			 传统注册方式：
+				利用On开头的事件如 onclick
+				<button onclick="alert('hi')"></button>
+				btn.onclick = function(){}
+				特点：注册事件的唯一性
+				同一个元素同一个事件只能设置一个处理函数 
+				最后注册的处理函数将会覆盖前面注册的处理函数
+			方法监听注册方式
+				W3C标准 推荐方式
+				addEventListener()它是一个方法
+				IE9之前的IE不支持此方法 可以用attachEvent()代替
+				特点：
+				同一个元素同一个事件可以注册多个监听器
+				按注册顺序依次执行
+				eventTarget.addEventListener(type,listener[,userCapture])
+				将指定的监听器注册到目标对象上 该对象触发指定时间是就会执行事件处理函数
+				type：事件类型字符串 比如click mouseover 注意这里不用带on
+				listener:事件处理函数 事件发生是 会调用该监听函数
+				userCaapture:可选参数 是一个布尔值 默认是false 
+		 -->
+		 <button>传统注册事件</button>
+		 <button>方法监听注册事件</button>
+		 <button>3</button>
+		<script>
+			var btns = document.querySelectorAll('button');
+			btns[0].onclick = function(){
+				alert('hi');
+			}
+			btns[0].onclick = function(){
+				alert('how are you');
+			}
+			//事件监听注册事件
+			btns[1].addEventListener('click',function(){
+				alert(22);
+			})
+			btns[1].addEventListener('click',function(){
+				alert(33);//这个也可以执行 不会被覆盖
+			})
+			
+			//attachEvent(eventNameWithOn,callback)注册事件
+			//eventNameWithOn:事件类型字符串 比如 onclick onmouseover 这里要带on 
+			//callback:事件处理函数 只能在IE浏览器IE9以前的可以使用
+			btns[2].attachEvent('onclick',function(){
+				alert(11);
+			})
+	</body>
+</html>

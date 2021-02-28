@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<!-- 子节点
+			 parentNode.childNodes
+		 -->
+		 <ul>
+		 	<li></li>
+		 	<li></li>
+		 	<li></li>
+		 	<li></li>
+		 </ul>
+		 <div class="demo">
+			 <div class="box">
+				 <span class="erweima"></span>
+			 </div>
+		 </div>
+		<script>
+			var ul = document.querySelector('ul');
+			var lis = document.querySelectorAll('li');
+			//使用子节点获取li  childNodes 所有的子节点包含元素节点和文本节点
+			//即 换行也会被当做一个文本节点子节点
+			console.log(ul.childNodes);
+			
+			//可以使用parentNode.children
+			console.log(ul.children);
+		</script>
+	</body>
+</html>

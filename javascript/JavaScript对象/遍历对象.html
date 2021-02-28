@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			var obj = {
+				name:'pink',
+				age:18,
+				sex:'男'
+			}
+			//之前的方法
+			console.log(obj.name);
+			console.log(obj.age);
+			console.log(obj.sex);
+			//for-in循环 遍历对象
+			//语法：
+			//for(变量 in 对象){   }
+			for(var k in obj){
+				console.log(k);// k 变量 输出 得到的是 属性名
+				console.log(obj[k]);//obj[k]  得到的是属性值
+			}
+			//使用for in  里面的变量 常常使用的是 k  或 key 
+		</script>
+	</head>
+	<body>
+		<!-- 遍历对象 -->
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			var i;//计数器变量
+			//题目1
+			var area; 
+			var sum1 = 0;
+			for(i = 1; i <= 100; i++){
+				sum1 += i;
+			}
+			area = sum1 / 100.0;
+			console.log(area);
+			//题目2
+			var sum2 = 0;
+			var sum3 = 0;
+			for(i = 1; i <= 100; i++){
+				if(i % 2 == 0){
+					sum2 += i;
+				}
+				else {
+					sum3 += i;
+				}
+			}
+			console.log('偶数和为：' + sum2);
+			console.log('奇数和为：' + sum3);
+			//题目3
+			var sum4 = 0;
+			for(i = 1; i <= 100; i++){
+				if(i % 3 == 0){
+					sum4 += i;
+				}
+			}
+			console.log(sum4);
+		</script>
+	</head>
+	<body>
+		<!-- for循环案例
+			 1.求1-100之间所有数的平均值
+			 2.求1-100之间所有偶数和奇数的和
+			 3.求1-100之间所有能被3整除的数字的和
+		 -->
+	</body>
+</html>

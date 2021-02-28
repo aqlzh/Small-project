@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			.father{
+				width: 400px;
+				height: 400px;
+				background-color: pink;
+			}
+			.son{
+				width: 200px;
+				height: 200px;
+				background-color: purple;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- mouseenter鼠标事件
+			 当鼠标移动到元素上就会触发mouseenter事件
+			 类似于mouseover 他们两者的区别是
+			 mouseover 鼠标经过自身盒子会触发 经过子盒子还会触发
+			 mouseenter只会经过自身盒子触发
+			 之所以这样 就是因为mouseenter不会冒泡
+			 跟mouseenter搭配鼠标离开 mouseleave 同样不会冒泡
+		 -->
+		 <div class="father">
+		 	<div class="son"></div>
+		 </div>
+		<script>
+			var father = document.querySelector('.father');
+			var son = document.querySelector('.son');
+			father.addEventListener('mouseover',function(){
+				console.log(11);
+			})
+			father.addEventListener('mouseenter',function(){
+				console.log(22);
+			})
+		</script>
+	</body>
+</html>

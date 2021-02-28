@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script></script>
+	</head>
+	<body>
+		<!-- 执行事件的步骤
+			 1.获取事件源
+			 2.注册事件(绑定事件)
+			 3.添加事件处理程序(采用函数赋值形式)
+			 
+			 常见鼠标事件：
+			 onclick-----鼠标点击左键触发
+			 onmouseover----鼠标经过触发
+			 onmouseout----鼠标离开触发
+			 onfocus----获得鼠标焦点触发
+			 onblur----失去鼠标焦点触发
+			 onmousemove----鼠标移动触发
+			 onmouseup----鼠标弹起触发
+			 onmousedown----鼠标按下触发
+		 -->
+		 <div></div>
+		 <script>
+			 //点击div 控制台输出 我被选中了
+			 //1.获取事件源
+			 var div = document.querySelector('div');
+			 //2.绑定事件 注册事件
+			 //div.onclick;
+			 //3.添加事件处理程序
+			 div.onclick = function(){
+				 console.log('我被选中了');
+			 }
+		 </script>
+	</body>
+</html>

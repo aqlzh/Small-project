@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			//案例1
+			var num = 10;
+			fun();
+			function fun(){
+				console.log(num);//undefined
+				var num = 20;
+			}
+			//相当于执行了以下操作
+			/* var num;
+			function fun(){
+				var num;
+				console.log(num);
+				num = 20;
+			}
+			num = 10;
+			fun(); */
+			
+			//案例2
+			var num = 10;
+			function fn(){
+				console.log(num);//undefined
+				var num = 20;
+				console.log(num);//20
+			}
+			fn();
+			//相当于执行以下代码
+			/* var num;
+			function fn(){
+				var num;
+				console.log(num);
+				num = 20;
+				console.log(num);
+			}
+			num = 10;
+			fn(); */
+			
+			//案例3
+			var a = 18;
+			f1();
+			function f1(){
+				var b = 9;
+				console.log(a);
+				console.log(b);
+				var a = '123';
+			}
+			//相当于执行以下代码
+			/* var a;
+			function f1(){
+				var b;
+				var a;
+				b = 9;
+				console.log(a);//undefined
+				console.log(b);//9
+				a = '123';
+			}
+			a = 18;
+			f1(); */
+			
+			//案例4
+			f1();
+			console.log(c);//9
+			console.log(b);//9
+			console.log(a);//报错
+			function f1(){
+				var a= b = c = 9;
+				//相当于 var a = 9; b = 9; c = 9;  b 和 c 没有声明直接赋值 当全局变量看
+				//集体声明 var a = 9, b = 9, c = 9;
+				console.log(a);//9
+				console.log(b);//9
+				console.log(c);//9
+			}
+			//相当于以下代码
+			/* function f1(){
+				var a;
+				a = b = c = 9;
+				console.log(a);
+				console.log(b);
+				console.log(c);
+			}
+			f1();
+			console.log(c);
+			console.log(b);
+			console.log(a); */
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

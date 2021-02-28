@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 内嵌式JS
+			 可以将多行JS代码写到script标签中
+			 内嵌JS式学习时常用的方式
+		 -->
+		<script>
+			//alert('hhhhhh');
+		</script>
+		<!-- 外部js 是双标签‘
+			 利于HTML页面代码结构化 把大段JS代码独立到HTML页面之外 既美观 也方便文件级别的复用
+			 引用外部JS文件的script标签中间不可以写代码
+			 适合于JS代码量比较大的情况
+		 -->
+		<script src="my.js"></script>
+	</head>
+	<body>
+		<!-- js有3种书写位置 分别为行内 内嵌和外部 -->
+		<!-- 行内式JS 直接写到元素的内部
+			 可以将单行或少量的JS代码写在HTML标签的事件属性中(以on开头的属性)如onclick
+			 注意单双引号的使用：在HTML中我们推荐使用双引号 JS中推荐使用单引号
+			 可读性差 在HTML中编写大量JS代码时 不方便阅读
+			 引号容易错误，引号多层嵌套匹配时 非常容易弄混
+			 特殊情况下使用
+		 -->
+		<!-- onclick是点击 alert是对话框 -->
+		<input type="button" value="唐伯虎" onclick="alert('秋香姐')">
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- e.target 返回事件的触发对象
+			 e.srcElement返回事件的触发对象
+		 -->
+		<div>123</div>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<script>
+			//1.e.target 返回的是触发事件的对象 而this返回的是绑定事件的对象
+			var div = document.querySelector('div');
+			div.addEventListener('click',function(e){
+				console.log(e.target);
+				console.log(this);
+			})
+			var ul = document.querySelector('ul');
+			ul.addEventListener('click',function(e){
+				console.log(this);//指向的是ul
+				console.log(e.currentTarget);//返回的也是ul 等同于this ie678不兼容
+				console.log(e.target);//指向的是li 因为我点击的是li
+			})
+		</script>
+	</body>
+</html>

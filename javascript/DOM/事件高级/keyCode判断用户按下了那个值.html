@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script></script>
+	</head>
+	<body>
+		<!-- keyCode  返回该键的ASCII值 -->
+		<script>
+			document.addEventListener('keyup',function(e){
+				console.log('up: ' + e.keyCode);
+			})
+			//keyup 和 keydown 不区分字母大小写 A 和 a 得到的都是 65
+			//keypress 是区分字母大小写的
+			document.addEventListener('keypress',function(e){
+				console.log('press: ' + e.keyCode);
+			})
+		</script>
+	</body>
+</html>

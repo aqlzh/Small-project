@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<!-- 复制节点
+			 node.cloneNode();
+			 node.cloneNode()方法返回调用该方法的节点的一个副本 也称为克隆节点/拷贝节点
+			 如果括号里面的参数为空 或者为false 则是浅拷贝 即只克隆复制节点本身不克隆里面的子节点
+			 如果括号里面为true 就是深拷贝
+		 -->
+		 <ul>
+		 	<li>1</li>
+		 	<li>2</li>
+		 	<li>3</li>
+		 </ul>
+		<script>
+			var ul = document.querySelector('ul');
+			//node.cloneNode()
+			// var li = ul.children[0].cloneNode();
+			var li = ul.children[0].cloneNode(true);
+			//添加
+			ul.appendChild(li);
+		</script>
+	</body>
+</html>

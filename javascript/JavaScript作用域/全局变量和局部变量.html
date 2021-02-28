@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			var num = 10;//num 就是一个全局变量
+			console.log(num);
+			function f(){
+				console.log(num);
+			}
+			f();
+			
+			function f2(){
+				var num1 = 10;//num1就是局部变量 只能在函数内使用
+				console.log(num1);
+				num2 = 20;
+			}
+			f2();
+			//console.log(num1);//报错 因为num1是局部变量
+			console.log(num2);
+		</script>
+	</head>
+	<body>
+		<!-- 变量的作用域：根据作用域的不同我们变量分为全局变量和局部变量
+			 全局变量：在全局作用域下的变量
+			 注意：如果在函数内部没有声明直接赋值的变量也属于去哪聚变量
+			 局部变量：在局部作用域下的变量 或者在函数内部的变量 就是 局部变量
+			 形参也可以看做是一个局部变量
+			 
+			 全局变量只有在浏览器关闭的时候才会销毁 比较占用内存资源
+			 局部变量 当我们重新执行完毕就会销毁 比较节省内存资源
+			 
+			 现阶段 JavaScript没有块级作用域
+			 JavaScript也是在 es6 的时候新增的块级作用域
+			 块级作用域就是用 {}包含的  比如
+			 {
+				 int num = 10;
+			 }
+			 花括号外面试不能调用 num的值
+		 -->
+	</body>
+</html>

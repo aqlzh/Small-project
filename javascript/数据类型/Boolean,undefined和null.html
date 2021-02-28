@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			var flag = true;//布尔型
+			var flag1 = false;//布尔型
+			//布尔类型进行加法运算时 true是当做 1 来看的 而false则是 0 
+			console.log(flag+1);//2
+			console.log(flag1+1);//1
+			
+			//undefined
+			var str;
+			console.log(str);//undefined
+			var variable = undefined;//手动给变量一个未定义的值
+			console.log(variable + 'pink');//undefinedpink
+			console.log(variable + 1);//NaN undefined和数字相加 最后结果是NaN
+			//null 空值
+			var space = null;
+			console.log(space + 'pink');//nullpink
+			console.log(space + 1);//1 空值和数字相加就是原先的那个数字
+		</script>
+	</head>
+	<body>
+		<!-- 布尔型Boolean
+			 布尔类型有两个值:true 和 false 其中true表示真，false表示假
+			 undefined和null
+			 一个声明后没有被赋值的变量会有一个默认值undefined(如果进行相连或相加时 注意结果)
+			 
+		 -->
+	</body>
+</html>

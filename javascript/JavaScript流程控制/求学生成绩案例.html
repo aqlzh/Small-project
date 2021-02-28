@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			var i ;
+			var num = prompt('请输入班级总人数：');
+			var sum = 0;
+			var score;
+			for(i = 1; i <= num; i++){
+				score = prompt('请输入第' + i + '个学生的成绩');//score获取到的是字符串 
+				sum += (score - 0);//所以要转化为数字型
+			}
+			alert('该班级的总成绩为：' + sum);
+			alert('该班级的平均成绩为：' + sum / (num - 0));//同理num获取的也是字符串
+		</script>
+	</head>
+	<body>
+		<!-- 要求用户输入班级人数 之后依次输入每个学生的成绩 
+			 最后打印出该班级总的成绩以及平均成绩
+		 -->
+	</body>
+</html>

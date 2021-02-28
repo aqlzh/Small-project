@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<!-- 在H5中为了防止无法分辨自定义属性和内置属性
+			 规定 自定义属性必须是以data-开头的
+			 获取H5自定义属性
+			 兼容性获取 element.getAttribute('data-index')
+			 H5新增element.dataset.index或者element.dataset['index']
+			 
+		 -->
+		 <div data-index="2" data-list-name="andy"></div>
+		<script>
+			var div = document.querySelector('div');
+			console.log(div.getAttribute('data-index'));
+			console.log(div.dataset.index);
+			console.log(div.dataset['index']);
+			//如果data-之后有多个短横线链接的单词 使用dataset就要有驼峰命名法
+			console.log(div.dataset.listName);
+		</script>
+	</body>
+</html>

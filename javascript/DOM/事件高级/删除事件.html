@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 删除事件
+			 传统解绑方式
+				eventTarget.onclick = null;
+		 -->
+		 <div>1</div>
+		 <div>2</div>
+		 <div>3</div>
+		<script>
+			var divs = document.querySelectorAll('div');
+			divs[0].onclick = function(){
+				alert(11);
+				//传统方式解绑
+				this.onclick = null;
+			}
+			//使用新方式解绑的话不能使用匿名函数
+			divs[1].addEventListener('click',fn);//里面的fn不需要调用加小括号
+			function fn(){
+				alert(22);
+				this.removeEventListener('click',fn);
+			}
+			//3.使用第三中方式
+			divs[2].attachEvent('onclick',fn1);
+			function fn1(){
+				alert(33);
+				this.detachEvent('onclick',fn1);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			var computer = {
+				color:'black',
+				weight:10,
+				brand:'华硕',
+				model:'顽石六代',
+				movie:function (){
+					console.log('看电影');
+				},
+				music:function(){
+					console.log('听音乐');
+				},
+				game:function(){
+					console.log('打游戏');
+				},
+				code:function(){
+					console.log('敲代码');
+				}
+			}
+			
+			var button = {};
+			button.width = 20;
+			button.height = 20;
+			button.bgc = 'red';
+			button.hit = function(){
+				console.log('点击');
+			}
+			
+			function Car(weight,color,brand){
+				this.weight = weight;
+				this.color = color;
+				this.brand = brand;
+				this.manned = function(){
+					console.log('载人');
+				}
+				this.push = function(){
+					console.log('拉货');
+				}
+				this.plow = function(){
+					console.log('耕田');
+				}
+			}
+			var car = new Car(400,'red','XS456');
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

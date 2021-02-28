@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			function countDown(time){
+				var nowTime = +new Date();//返回当前时间的毫秒数
+				var inputTime = +new Date(time);//返回的是用户输入时间的总的毫秒数
+				var times = (inputTime - nowTime) / 1000;//times是剩余时间的秒数
+				var d =parseInt(times / 60 /60 /24);
+				d = d < 10 ? '0' + d : d;
+				var h = parseInt(times / 60 / 60 % 24);
+				h = h < 10 ? '0' + h : h;
+				var m = parseInt(times / 60 % 60);
+				m = m < 10 ? '0' + m : m;
+				var s = parseInt(times % 60);
+				s = s < 10 ? '0' + s : s;
+				return d + '天' + h + '时' + m + '分' + s + '秒';
+			}
+			console.log(countDown('2020-12-24 17:30:00'));
+	
+		</script>
+	</head>
+	<body>
+		<!-- 核心算法 就是输入的时间 减去现在的时间 就是剩余的时间
+			 即倒计时 但是不能拿着时分秒相减 比如 05分 - 25分 结果会是一个负数
+			 使用时间戳来做 用户输入时间总的毫秒数减去现在时间的总的毫秒数 
+			 得到的就是现在剩余时间的毫秒数
+			 把剩余时间总的毫秒数 转换为天 时 分 秒
+			 转换公式如下
+			 d = parseInt(总秒数/60/60/24)；计算天数
+			 h = parseInt(总秒数/60/60%24)；计算小时数
+			 m = parseInt(总秒数/60%60)；计算分钟数
+			 s = parseInt(总秒数%60)；计算秒数
+		 -->
+	</body>
+</html>

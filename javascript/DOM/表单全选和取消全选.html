@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			table{
+				width: 200px;
+				margin: 100px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<table cellspacing="0">
+			<thead>
+				<tr>
+					<td>
+						<input type="checkbox" id="j_cball">
+					</td>
+					<td>商品</td>
+					<td>价格</td>
+				</tr>
+			</thead>
+			<tbody id="j_tb">
+				<tr>
+					<td>
+						<input type="checkbox">
+					</td>
+					<td>iPhone8</td>
+					<td>8000</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox">
+					</td>
+					<td>iPhone8</td>
+					<td>8000</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox">
+					</td>
+					<td>iPhone8</td>
+					<td>8000</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox">
+					</td>
+					<td>iPhone8</td>
+					<td>8000</td>
+				</tr>
+			</tbody>
+		</table>
+		<script>
+			var j_cball = document.getElementById('j_cball');
+			var j_tbs = document.getElementById('j_tb').getElementsByTagName('input');
+			j_cball.onclick = function(){
+				console.log(this.checked);
+				for(var i = 0; i < j_tbs.length; i++){
+					j_tbs[i].checked = this.checked;
+				}
+			}
+			for(var i = 0; i < j_tbs.length; i++){
+				j_tbs[i].onclick = function(){
+					var flag = true;
+					for(var i = 0; i < j_tbs.length; i++){
+						if(!j_tbs[i].checked){
+							flag = false;
+							break;//退出循环 提高执行效率
+							//因为只要有一个没有选中 就不会全选
+						}
+					}
+					j_cball.checked = flag;
+				}
+			}
+		</script>
+	</body>
+</html>

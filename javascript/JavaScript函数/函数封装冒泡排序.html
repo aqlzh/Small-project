@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			function sort(arr){
+				for(var i =0; i < arr.length - 1; i++){
+					for(var j = 0 ; j < arr.length - i - 1; j++){
+						if(arr[j] > arr[j + 1]){
+							var temp = arr[j];
+							arr[j] = arr[j + 1];
+							arr[j + 1] = temp;
+						}
+					}
+				}
+				return arr;
+			}
+			var arr1 = sort([1,2,4,8,6]);
+			console.log(arr1);
+		</script>
+	</head>
+	<body>
+		<!-- 利用函数封装实现冒泡排序 -->
+	</body>
+</html>

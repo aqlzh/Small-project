@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script></script>
+	</head>
+	<body>
+		一段不能复制的文字
+		<!-- 常用的鼠标事件
+			 禁止鼠标右键菜单
+			 contextmenu主要控制应该何时显示上下文菜单 
+			 主要用于程序员取消默认上下文菜单
+			 禁止鼠标选中
+			 selectstart 开始选中
+			 
+		 -->
+		 <script>
+			 document.addEventListener('contextmenu',function(e){
+				 e.preventDefault();//阻止默认行为 这里是禁止右键菜单
+			})
+			 document.addEventListener('selectstart',function(e){
+				 e.preventDefault();//禁止鼠标选中
+			 })
+		 </script>
+	</body>
+</html>

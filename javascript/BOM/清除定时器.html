@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script></script>
+	</head>
+	<body>
+		<!-- 停止 setTimeout()定时器
+			 window.clearTimeout(timeoutID)  timeID 是定时器的名字
+			 clearTimeout()方法取消了先前通过调用setTimeout()建立的定时器
+			 注意：
+			 window可以省略
+		 -->
+		 <button>点击停止定时器</button>
+		 <script>
+			 var btn = document.querySelector('button');
+			 var timer = setTimeout(function(){
+				 console.log('爆炸了');
+			 },5000);
+			 btn.addEventListener('click',function(){
+				 clearTimeout(timer);
+			 })
+		 </script>
+	</body>
+</html>

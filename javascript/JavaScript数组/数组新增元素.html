@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			//修改length长度
+			var arr = ['red','green','blue'];
+			console.log(arr.length);
+			arr.length = 5;//修改数组长度为5 
+			console.log(arr);//有五个元素 arr[4] arr[5]是undefined
+			//通过修改索引号新增数组元素(追加)
+			var arr1 = ['red','green','blue'];
+			arr1[3] = 'pink';
+			console.log(arr1);
+			arr1[0] = 'yellow';//这里表示的不是新增数组元素 而是替换数组元素
+			//如果数组下标 有值 那么就是替换 如果没有就是追加
+		</script>
+	</head>
+	<body>
+		<!-- 数组新增元素
+				通过修改length长度新增数组元素
+				 可以通过修改length长度来实现数组扩容的目的
+				 length属性是可读写的
+				 
+				索引号增加数组元素
+		 -->
+	</body>
+</html>

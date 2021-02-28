@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div>我是div</div>
+		<span>我是span</span>
+		<script>
+			var div = document.querySelector('div');
+			//div.nextSibling得到的是下一个兄弟节点 同样也包含文本节点元素节点
+			console.log(div.nextSibling);
+			console.log(div.previousSibling);//返回前一个兄弟节点
+			//div.nextElementSibling 不包含文本节点
+			console.log(div.nextElementSibling);//得到下一个兄弟元素节点
+			console.log(div.previousElementSibling);//得到上一个兄弟元素节点
+			//有兼容性问题
+		</script>
+	</body>
+</html>

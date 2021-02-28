@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script></script>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+			}
+			.change{
+				background-color: purple;
+				color: #fff;;
+				font-size: 25px;
+				margin-top: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="first">文本</div>
+		<script>
+			//使用element.style 获得修改元素样式 如果样式较少 或者功能简单的情况下使用
+			/* var text = document.querySelector('div');
+			text.onclick = function(){
+				this.style.backgroundColor = 'purple';
+				this.style.color = '#fff';
+				this.style.fontSize = '25px';
+				this.style.marginTop = '100px';
+			} */
+			//2.使用element.className
+			var test = document.querySelector('div');
+			test.onclick = function(){
+				//适合于较多样式修改的情况
+				//className会直接更改元素的类名 会覆盖原先的类名
+				//this.className = 'change';//让我们当前元素的类名该为change
+				//如果想要保留原先的类名 可以使用多类名选择器
+				this.className = 'first change';
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 调整窗口大小事件
+			 window.onresize = function(){}
+			 window.addEventListener('resize',function(){});
+			 window.onresize 是调整窗口大小加载事件 当触发时就调用的处理函数
+			 只要窗口大小出现变化 就会触发这个事件
+			 我们经常利用这个事件完成响应式布局 window.innerWidth当前屏幕的宽度
+		 -->
+		 <script>
+			 window.addEventListener('load',function(){
+				var div = document.querySelector('div');
+				window.addEventListener('resize',function(){
+				console.log(window.innerWidth);
+				console.log('变化了');
+				if(window.innerWidth <= 800){
+					div.style.display = 'none';
+				}
+				})
+			 })
+			 
+		 </script>
+		 <div></div>
+	</body>
+</html>

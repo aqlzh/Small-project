@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			function getResult(){
+				return 666;
+			}
+			getResult();//   getResult() = 666;
+			console.log(getResult());
+			
+			function getResult2(num1,num2){
+							 return [num1 + num2,num1 - num2,num1 * num2,num1 / num2];
+			}
+			var re = getResult2(1,2);//返回的是一个数组 间接实现返回多个值的效果
+			console.log(re);
+		</script>
+	</head>
+	<body>
+		<!-- 有的时候 我们希望函数将值返回给调用者 此时通过使用return语句就可以实现
+			 function 函数名(){
+				 return 需要返回的结果；
+			 }
+			 函数只是实现某种功能 作者结果需要返回给函数的调用者 通过return 实现
+			 只要函数遇到return 就把后面的结果 返回给函数的调用者 
+			 相当于 函数名() = return 后面的结果
+			 
+			 return终止函数
+			 return标志着函数的结束 return语句之后的代码不会被执行
+			 return只能返回一个值
+			 如果想要输出多个值
+			 function getResult(num1,num2){
+				 return [num1 + num2,num1 - num2,num1 * num2,num1 / num2];
+			 }
+			 var re = getResult(1,2);//返回的是一个数组 间接实现返回多个值的效果
+			 console.log(re);
+			 
+			 如果函数有return语句 那么就返回的是return语句后面的值 
+			 如果函数没有return语句 那么返回的是undefined
+			 
+			 return 不仅可以退出循环 还能够返回return语句中的值 同时还可以结束当前函数体内的代码
+			 
+		 -->
+	</body>
+</html>

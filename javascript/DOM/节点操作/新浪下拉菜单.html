@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			li{
+				list-style: none;
+			}
+			a{
+				text-decoration: none;
+				color: orange;
+			}
+			.nav>li{
+				position: relative;
+				float: left;
+			.nav>li>ul>li{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="nav">
+			<li>
+				<a href="#">微博</a>
+				<ul>
+					<li>
+						<a href="">私信</a>
+					</li>
+					<li>
+						<a href="">评论</a>
+					</li>
+					<li>
+						<a href="">@我</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">微博</a>
+				<ul>
+					<li>
+						<a href="">私信</a>
+					</li>
+					<li>
+						<a href="">评论</a>
+					</li>
+					<li>
+						<a href="">@我</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">微博</a>
+				<ul>
+					<li>
+						<a href="">私信</a>
+					</li>
+					<li>
+						<a href="">评论</a>
+					</li>
+					<li>
+						<a href="">@我</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">微博</a>
+				<ul>
+					<li>
+						<a href="">私信</a>
+					</li>
+					<li>
+						<a href="">评论</a>
+					</li>
+					<li>
+						<a href="">@我</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<script>
+			var nav = document.querySelector('.nav');
+			var lis = nav.children;
+			for(var i = 0; i < lis.length; i++){
+				lis[i].onmouseover = function(){
+					this.children[1].style.display = 'block';
+				}
+				lis[i].onmouseout = function(){
+					this.children[1].style.display = 'none';
+				}
+			}
+		</script>
+	</body>
+</html>

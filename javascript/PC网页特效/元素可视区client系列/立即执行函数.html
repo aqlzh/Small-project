@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<!-- 立即执行函数
+			 (function(){})()
+			 主要作用：创建一个独立的作用域
+		 -->
+		<script>
+			//普通函数必须先声明 然后调用才能执行
+			function fn(){
+				console.log(1);
+			}
+			fn();
+			//立即调用函数 不需要调用 立马能够执行的函数
+			//写法1
+			(function(a,b){
+				console.log(a + b);
+			})(1,2);//第二个小括号可以看做是调用函数
+			//写法2
+			(function(a,b){
+				console.log(a + b);
+			}(2,3));
+			//如果有多个立即执行函数 要使用分号隔开
+			//3.立即执行函数最大的作用就是 独立创建了一个作用域
+			//里面所有变量都是局部变量 不会有命名冲突的问题
+		</script>
+	</body>
+</html>

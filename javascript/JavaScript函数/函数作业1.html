@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			//1.
+			function calaulate(num1,oper,num2){
+				switch(oper){
+					case '+':
+						return Number(num1) + Number(num2);
+					case '-':
+						return parseFloat(num1 - num2);
+					case '*':
+						return parseFloat(num1 * num2);
+					case '/':
+						return parseFloat(num1 / num2);
+				}
+			}
+			var num1 = prompt('请输入第一个数');
+			var num2 = prompt('请输入第二个数');
+			var oper = prompt('请输入要进行的运算');
+			var re = calaulate(num1,oper,num2);
+			alert(re);
+		</script>
+	</head>
+	<body>
+		<!-- 
+			 1.写一个函数 用户输入任意两个数字的任意算数运算 并能够弹出运算后的结果
+		 -->
+	</body>
+</html>

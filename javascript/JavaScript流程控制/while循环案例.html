@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			//1.
+			var i = 1;
+			while(i <= 100){
+				console.log('这个人今年' + i + '岁了');
+				i++;
+			}
+			//2.
+			var j = 1;
+			var sum = 0;
+			while(j <= 100){
+				sum += j;
+				j++;
+			}
+			console.log(sum);
+			//3.
+			var flag = true;
+			while(flag){
+				var str1 = prompt('你爱我吗？'); 
+				if(str1 == '我爱你'){
+					flag = false;
+				}
+			}
+			var message = prompt('你爱我吗？');
+			while(message != '我爱你'){
+				message = prompt('你爱我吗？');
+			}
+			alert('我也爱你');
+		</script>
+	</head>
+	<body>
+		<!-- 
+			1.打印人的一生 从1岁到100岁
+			2.计算1到100之间所有整数的和
+			3.弹出一个提示框 你爱我吗？ 如果输入我爱你 就提示结束 否则一致询问
+		 -->
+	</body>
+</html>

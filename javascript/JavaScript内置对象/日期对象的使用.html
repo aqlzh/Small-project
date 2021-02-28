@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			//1.使用Date  如果没有参数 返回当前系统的当前时间
+			var date = new Date();
+			console.log(date);//得到当前时间
+			//2.参数常用的写法 数字型： 2019,10,01 或者是字符串型 '2019-10-1 8:8:8'
+			var date1 = new Date(2019,10,1);//返回的是11月 而不是10月
+			console.log(date1);
+			var date2 = new Date('2019-10-1 8:8:8');
+			console.log(date2);
+		</script>
+	</head>
+	<body>
+		<!-- Date 用来处理日期和时间的 Date对象 基于1970年1月1日(世界标准时间)起的毫秒
+			 Date只能通过Date构造函数 来实例化 日期对象 
+			 Date ()日期对象 是一个构造函数 必须使用new来调用创建我们的日期对象
+			 
+		 -->
+	</body>
+</html>

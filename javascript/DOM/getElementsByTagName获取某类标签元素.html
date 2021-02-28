@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	</head>
+	<body>
+		<!-- 根据标签名获取
+			 使用getElementsByTagName('标签名')方法可以返回带有指定标签名的对象的集合
+			 因为得到的是一个对象的集合 所以我们想要操作里面的元素就需要遍历
+			 得到的元素是动态的 一旦元素内容发生改变 则得到的元素也会发生改变
+			 
+			 还可以获取某个元素(父元素)内部的制度标签名的子元素
+			 element.getElementsByTagName('标签名')；
+			 注意：父元素必须是单个对象(必须指明是哪个元素对象) 获取时 不包括父元素自己
+			 
+		 -->
+		 <ul>
+		 	<li>知否知否，应是绿肥红瘦</li>
+		 	<li>知否知否，应是绿肥红瘦</li>
+		 	<li>知否知否，应是绿肥红瘦</li>
+		 	<li>知否知否，应是绿肥红瘦</li>
+		 	<li>知否知否，应是绿肥红瘦</li>
+		 </ul>
+		 <ol id="ol">
+		 	<li>知否知否，应是绿肥红瘦</li>
+		 	<li>知否知否，应是绿肥红瘦</li>
+		 	<li>知否知否，应是绿肥红瘦</li>
+		 	<li>知否知否，应是绿肥红瘦</li>
+		 	<li>知否知否，应是绿肥红瘦</li>
+		 </ol>
+		 <script >
+			 //返回的是 获取过来元素对象的集合 以伪数组的形式存储
+		 	var lis = document.getElementsByTagName('li');
+			console.log(lis);
+			//如果想要依次打印里面的元素对象 我们可以采用遍历的方式
+			for(var i = 0;i < lis.length; i++){
+				console.log(lis[i]);
+			}
+			//如果页面中只有一个li 返回的还是伪数组的形式 
+			//如果页面没有这个元素  返回的是空的一个伪数组
+			//所以无论该元素有多少个 使用该方法返回的都是伪数组的形式
+			
+			//获取ol里面的li element.getElementsByTagName('标签名')；
+			var ol = document.getElementsByTagName('ol');//返回的是一个伪数组 必须指定确定的对象
+			//console.log(ol.getElementsByTagName('li'));//报错 因为ol是一个伪数组不是一个确定的对象
+			console.log(ol[0].getElementsByTagName('li'));//这样写才是正确的
+			
+			//在实际操作中 我们可以给 ol指定一个id 然后使用getelementbyid获取ol的对象
+			var ol1 = document.getElementById('ol');
+			console.log(ol.getElementsByTagName('li'));
+		 </script>
+	</body>
+</html>
