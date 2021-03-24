@@ -21,3 +21,11 @@ small project  collections
 
 
 
+### EatSnake 
+
+基于 Java GUI  贪吃蛇 游戏
+
+![](https://github.com/aqlzh/Small-project/blob/master/EatSnake/image/%E5%BC%80%E5%A7%8B%E6%B8%B8%E6%88%8F.jpg)
+
+
+![](https://github.com/aqlzh/Small-project/blob/master/EatSnake/image/%E6%B8%B8%E6%88%8F%E8%BF%9B%E8%A1%8C.jpg)
