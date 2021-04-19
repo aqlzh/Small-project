@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="800" height="600" id="can"></canvas>
+    <script>
+        var can = document.getElementById("can");
+        var ctx = can.getContext("2d");
+        // 球类
+        function Ball(x, y, r) {
+            this.x = x;
+            this.y = y;
+            // 半径
+            this.r = r;
+            // 设置随机颜色
+            this.color = getRandomColor();
+            // 设置行进方向
+            this.dx = parseInt(Math.random() * 10);
+            // 设置行进方向
+            this.dy = parseInt(Math.random() * 10);
+            // 将小球维护到数组中
+            balArr.push(this)
+        }
+        Ball.prototype.update = function() {
+            this.x += this.dx
+            this.y += this.dy
+            this.r -= 0.1
+            if (this.r < 0) {
+                this.remove() //筛选出r小于0的小球
+            }
+        }
+        Ball.prototype.remove = function() {
+            for (let index = 0; index < balArr.length; index++) {
+                if (balArr[index] == this) {
+                    // console.log(this);
+                    balArr.splice(index, 1) //从下标为index处删除一个元素
+                }
+            }
+        }
+        // 渲染小球
+        Ball.prototype.render = function() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false)
+            // console.log(this);//
+            ctx.fillStyle = this.color
+            ctx.fill()
+        }
+        // canvas 设置鼠标监听
+        can.addEventListener("mousemove", function(event) {
+            new Ball(event.offsetX, event.offsetY, Math.random() * 13)
+        })
+
+
+        // 定时器进行动画渲染
+        setInterval(() => {
+            ctx.clearRect(0, 0, can.width, can.height)
+            for (let index = 0; index < balArr.length; index++) {
+
+                balArr[index].update()
+                if (balArr[index]) {
+                    balArr[index].render()
+                }
+            }
+        }, 40) //相当于帧数
+        // 维护小球的数组
+        var balArr = []
+        // 随机颜色
+        function getRandomColor() {
+            var allType = "0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f"
+            var allTypeArr = allType.split(",");
+            var color = "#"
+            for (let index = 0; index < 6; index++) {
+                var random = parseInt(Math.random() * allTypeArr.length);
+                color += allTypeArr[random]
+            }
+            return color
+        }
+    </script>
+</body>
+
+</html>

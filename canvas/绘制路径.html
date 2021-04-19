@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="600px" height="600px"></canvas>
+    <script>
+        var canvas = document.querySelector('canvas');
+        var ctx = canvas.getContext('2d')
+        //绘制一个三角形
+        // ctx.beginPath();
+        // ctx.moveTo(100, 100)
+        // ctx.lineTo(100, 200)
+        // ctx.lineTo(187, 150)
+        // ctx.closePath()
+        // ctx.strokeStyle = 'red';
+        // ctx.stroke();
+
+        //绘制一个圆弧
+        // arc(x,y,radius,startAngle,endAngle,anticlockwise)
+        // 画一个以（x,y）为圆心的以radius为半径的圆弧，
+
+        ctx.beginPath();
+        ctx.arc(200, 200, 100, 2*Math.PI,0, true)//顺时针
+        ctx.strokeStyle = 'red';
+        ctx.stroke();
+        console.log(parseInt(Math.random()*9));//生成的随机数不会超过9
+    </script>
+</body>
+
+</html>

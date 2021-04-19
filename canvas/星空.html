@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas></canvas>
+    <script>
+        var canvas = document.querySelector('canvas');
+        canvas.width = 600;
+        canvas.height = 600;
+
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'black';
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
+        function Star(cnt,R,r,x,y,rot){
+		cnt.beginPath();
+		if(!rot) rot=0;
+		for(var i=0;i<5;i++){
+			cnt.lineTo(Math.cos((18+i*72-rot)/180*Math.PI)*R+x,-Math.sin((18+i*72-rot)/180*Math.PI)*R+y);
+			cnt.lineTo(Math.cos((54+i*72-rot)/180*Math.PI)*r+x,-Math.sin((54+i*72-rot)/180*Math.PI)*r+y);
+		}
+		cnt.closePath();
+
+		cnt.lineWidth=3;
+		cnt.strokeStyle="red";
+		cnt.fillStyle="yellow";
+		cnt.lineJoin="round";
+
+		cnt.stroke();
+		cnt.fill();
+	}
+    
+            for(var j =0;j<150;j++){
+            var r = Math.random()*10+10;
+            var x= Math.random()*canvas.width
+            var y= Math.random()*canvas.height
+            var rot = Math.random*360
+            
+        Star(ctx,r/3,r,x,y,rot)
+    }
+    </script>
+</body>
+
+</html>

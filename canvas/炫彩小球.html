@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="6000px" height="6000px"></canvas>
+    <script>
+        var canvas = document.querySelector('canvas');
+        var ctx = canvas.getContext('2d');
+        var balArr = [];
+
+        function Ball(x, y, r) {
+            this.x = x;
+            this.y = y;
+            // 半径
+            this.r = r;
+            // 设置随机颜色
+            this.color = getRandomColor();
+            // 设置行进方向
+            this.dx = parseInt(Math.random() * 10)-5;
+            // 设置行进方向
+            this.dy = parseInt(Math.random() * 10)-5;
+            // 将小球维护到数组中
+            balArr.push(this)
+        }
+        // 随机颜色
+        function getRandomColor() {
+            var allType = "0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f"
+            var allTypeArr = allType.split(",");
+            var color = "#"
+            for (let index = 0; index < 6; index++) {
+                var random = parseInt(Math.random() * allTypeArr.length);
+                color += allTypeArr[random]
+            }
+            return color
+        }
+        //渲染小球
+        Ball.prototype.render = function() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false)
+            ctx.fillStyle = this.color
+            ctx.fill();
+        }
+        //更新小球,行进轨迹
+        Ball.prototype.update = function() {
+            this.x += this.dx;
+            this.y += this.dy;
+            this.r -= 0.1;
+            if (this.r < 0) {
+                this.remove() //筛选出r小于0的小球
+            }
+        }
+        //删除小球
+        Ball.prototype.remove = function() {
+            for (var i = 0; i < balArr.length; i++) {
+                if (balArr[i] == this) {
+                    balArr.splice(i, 1) //从下标为index处删除一个元素
+                }
+            }
+        }
+                //鼠标移动事件
+                canvas.addEventListener('mousemove',function(e){
+            new Ball(e.offsetX,e.offsetY,Math.random() * 13)
+        })
+        //定时器开启动画
+        setInterval(function(){
+            //清屏
+            ctx.clearRect(0,0,canvas.width,canvas.height)
+            //更新
+            for(let index =0; index<balArr.length;index++){
+                balArr[index].update();
+            if(balArr[index]){
+                balArr[index].render();
+            }//给更新的小球渲染上颜色与大小
+            
+            }
+        },40)
+
+
+    </script>
+</body>
+
+</html>

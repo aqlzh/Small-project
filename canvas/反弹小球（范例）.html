@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="can"></canvas>
+    <script>
+        var ballArr = []
+        var can = document.getElementById("can");
+        var ctx = can.getContext("2d");
+        //    画布尺寸
+        can.width = document.documentElement.clientWidth
+        can.height = document.documentElement.clientHeight
+        function Ball(x, y, r) {
+            // this.x = parseInt(Math.random()  * can.width)
+            // this.y = parseInt(Math.random()  * can.height)
+            this.x = x
+            this.y = y
+            this.r = r
+            // this.color=getRandomColor()
+            this.color="#91d5ff"
+            // 反弹次数
+            this.count = 0
+            // 设置行进方向
+            this.dx = parseInt(Math.random() * 10) - 5
+            // 设置行进方向
+            this.dy = parseInt(Math.random() * 10) - 5
+            ballArr.push(this)
+        }
+        // 更新
+        Ball.prototype.update = function () {
+            this.x += this.dx
+            this.y += this.dy
+            // 碰壁反弹
+            if (this.x <= this.r || this.x >= can.width - this.r) {
+                this.dx = -this.dx
+                this.count++
+            }
+            // 碰壁反弹
+            if (this.y <= this.r || this.y >= can.height - this.r) {
+                this.dy = -this.dy
+                this.count++
+            }
+            if (this.count >= 3) {
+                this.remove()
+            }
+        }
+        // 删除
+        Ball.prototype.remove = function () {
+            for (let index = 0; index < ballArr.length; index++) {
+                if (ballArr[index] == this) {
+                    ballArr.splice(index, 1)
+                }
+            }
+        }
+        // 渲染
+        Ball.prototype.render = function () {
+            // 创建路径
+            ctx.beginPath();
+            // 透明度
+            ctx.globalAlpha = 1
+            // 画小球
+            ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false)
+            ctx.fillStyle = this.color
+            ctx.fill()
+            // 画线逻辑
+            for (let index = 0; index < ballArr.length; index++) {
+                if (Math.abs(ballArr[index].x - this.x) < 180 && Math.abs(ballArr[index].y - this.y) < 180) {
+                    ctx.strokeStyle = "#42beff"
+                    ctx.beginPath();
+                    // 透明度设置，根据当前已经连线的的2个小球距离进行线的透明度设置
+                    ctx.globalAlpha = 10 / Math.sqrt(Math.pow(ballArr[index].x - this.x, 2) + Math.pow(ballArr[index].y - this.y, 2))
+                    // 移动绘制点
+                    ctx.moveTo(this.x, this.y)
+                    // 描述行进路径
+                    ctx.lineTo(ballArr[index].x, ballArr[index].y)
+                    ctx.closePath();
+                    // 绘制
+                    ctx.stroke()                          
+                }
+            }
+        }
+        can.addEventListener("click", function (event) {
+            for (let index = 0; index < Math.ceil(Math.random() * 20); index++) {
+                new Ball(event.offsetX, event.offsetY, Math.random() * 20 + 0.01)
+            }
+        })
+        // 定时器动画
+        setInterval(function () {
+            ctx.clearRect(0, 0, can.width, can.height)
+            for (let index = 0; index < ballArr.length; index++) {
+                ballArr[index].update()
+                ballArr[index].render()
+            }
+        }, 25)
+        // 随机颜色
+        function getRandomColor() {
+            var allType = "0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f"
+            var allTypeArr = allType.split(",");
+            var color = "#"
+            for (let index = 0; index < 6; index++) {
+                var random = parseInt(Math.random() * allTypeArr.length);
+                color += allTypeArr[random]
+            }
+            return color
+        }
+    </script>
+</body>
+
+</html>

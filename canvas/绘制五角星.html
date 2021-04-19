@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <script type="text/javascript">
+
+    
+
+
+    window.onload=function(){
+      var c=document.getElementById("canvas");
+      c.width=800;
+      c.height=800;
+      var context=c.getContext("2d");
+      //调用函数
+      drawStar(context,130,300,400,400,100);
+    }
+
+    //封装一个绘制五角星的函数
+    /*参数说明
+    *  ctx:为canvas上下文环境变量
+    *   r:小圆半径
+    *   R；大圆半径
+    *   x,y:为五角心中心坐标
+    *   rot:旋转角度
+    */
+    function drawStar(ctx,r,R,x,y,rot){
+      ctx.beginPath();
+      for(var i=0;i<5;i++){
+        ctx.lineTo(Math.cos((18+i*72-rot)/180*Math.PI)*R+x,//角度转换为弧度
+                  -Math.sin((18+i*72-rot)/180*Math.PI)*R+y);
+         ctx.lineTo(Math.cos((54+i*72-rot)/180*Math.PI)*r+x,
+                  -Math.sin((54+i*72-rot)/180*Math.PI)*r+y);
+        
+      }
+      ctx.closePath();
+
+
+            ctx.lineWidth=3;
+            ctx.fillStyle = "red"
+            ctx.strokeStyle = '#fd5'
+            ctx.lineJoin = 'round'
+            ctx.fill()
+            ctx.stroke();
+
+    }
+
+  </script>
+</body>
+</html>
