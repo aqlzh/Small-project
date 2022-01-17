@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="heart">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+<style>
+    body {
+        margin: 0;
+        /* 可视窗口的高度 */
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* 径向渐变色 */
+        background: radial-gradient(circle, navy, black);
+    }
+
+    .heart {
+        width: 360px;
+        height: 310px;
+        /* border: 1px dashed white; */
+        /* font-size: 20px; */
+        display: flex;
+        justify-content: space-between;
+    }
+    .heart span {
+        width: 30px;
+        --c: lightblue;
+        --h: 50%;
+        --t: 25%;
+        background-color: var(--c);
+        border-radius: 0.4em;
+        position: relative;
+        height: var(--h);
+        top: var(--t);
+        animation: beating 1s linear infinite;
+    }
+
+    .heart span:nth-child(1),
+    .heart span:nth-child(9) {
+        --c: orangered;
+        --h: 80px;
+        --t: 50px;
+    }
+
+    .heart span:nth-child(2),
+    .heart span:nth-child(8) {
+        --c: gold;
+        --h: 160px;
+        --t: 10px;
+    }
+
+    .heart span:nth-child(3),
+    .heart span:nth-child(7) {
+        --c: limegreen;
+        --h: 220px;
+        --t: 0px;
+    }
+
+    .heart span:nth-child(4),
+    .heart span:nth-child(6) {
+        --c: dodgerblue;
+        --h: 240px;
+        --t: 20px;
+    }
+
+    .heart span:nth-child(5) {
+        --c: mediumpurple;
+        --h: 250px;
+        --t: 40px;
+    }
+
+    @keyframes beating {
+        0%,20% {
+            height: var(--h);
+            top:var(--t);
+            background-color:var(--c);
+        }
+        60%,70% {
+            height: 50%;
+            top: 20%;
+            background-color: lightblue;
+        }
+    }
+</style>
+
+</html>
