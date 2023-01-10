@@ -1,0 +1,357 @@
+.w{         /*版心公共*/
+    width: 1485px;
+    margin:  0 auto;
+}
+img{
+    vertical-align: top;     /*解决tip底部有空隙问题*/
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+    margin-right: 50px;
+}
+a{
+    text-decoration: none;
+    font-size: 12px;
+    color: #999;
+}
+a:hover{
+    color: #c81623;
+}
+blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, 
+textarea, th, ul{
+    margin: 0;
+    padding: 0;
+}
+input ,button{
+    border:0;
+    outline: none;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #f6f6f6;
+}
+.f10{
+    color: #f10215!important;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?4b5fto');
+    src:  url('../fonts/icomoon.eot?4b5fto#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?4b5fto') format('truetype'),
+      url('../fonts/icomoon.woff?4b5fto') format('woff'),
+      url('../fonts/icomoon.svg?4b5fto#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+/* header start */
+header{
+    height: 90px;
+    background-color: #ee4f28;
+}
+/* header end */
+/* 快速导航栏 start */
+.shortcut{
+    /* float: left; */
+    height: 30px;
+    line-height: 30px;
+    background-color: #e3e4e5;
+    border-bottom: 1px solid #ddd;
+    font-size: 12px;
+}
+.city{
+    margin-left: 200px;
+}
+.shortcut li{
+   float: left;
+}
+.space{
+    margin: 10px 12px 0;
+    background-color: #ccc;
+    width: 1px;
+    height: 10px;
+}
+.shortcut i {
+    font-family: "icomoon";
+    font-style: normal;
+}
+.fr{
+
+    position: relative;
+}
+.mobile {
+    position: absolute;
+   
+    /* left:-3px;
+    top: 150px; */
+    border: 1px solid #ccc;
+    /* padding:10px; */
+    float: right;
+    top: 40px;
+    right:-3px;
+}
+/* 快速导航栏 end */
+/* 中间大部分 start */
+.middle{
+    height: 140px;
+    /* background-color: skyblue; */
+    position: relative;
+}
+.logo{
+    top: -1px;
+    left: 50px;
+    position: absolute;
+    /* box-shadow: 0px -10px 10px rgba(0,0,0,0.3);*/
+} 
+.logo a {
+    display: block;
+    background: url(../images/logo2.gif) no-repeat ;
+    width: 219px;
+    height:170px;
+
+}
+/* 搜索框部分 */
+.from {
+    width: 550px;
+    height: 35px;
+    /* background-color: blue; */
+    position: absolute;
+    top:55px;
+    left: 400px;
+}
+.from input{
+    width: 495px;
+    height: 33px;
+    /* background-color: pink; */
+    border: 1px solid #f10215;
+    float: left;
+    font-size: 14px;
+    padding-left: 3px;
+}
+.from button{
+    width: 50px;
+    height: 35px;
+    float: left;
+    background-color: #e11b25;
+}
+.from button i{
+    font-family:'icomoon' ;
+    font-style:normal ;
+    color: #fff;
+}
+.shop-car{
+    width: 188px;
+    height: 33px;
+    line-height: 33px;
+    border: 1px solid  #ccc;
+    position: absolute;
+    top: 55px;
+    right: 190px;
+    background-color: #fff;
+    text-align: center;
+    color: #f10215;
+}
+.shop-car i{ 
+    font-family:'icomoon' ;
+    font-style:normal ;
+    margin-right: 5px;
+}
+.shop-car span{
+         width: 15px;
+         height: 15px;
+         background-color: #f10215;
+         border-radius: 50%;
+         position: absolute;       /*加了绝对 固定 浮动 定位的行内元素，可以不用转化直接给宽度和高度*/
+         top: 5px;
+         right:30px;
+         font-size: 12px ;
+         color: #fff;
+         line-height: 15px;
+}
+           /* 关键字 start  */
+.hotwords{
+    position: absolute;
+    top: 87px;
+   left: 450px;
+}
+         /* 小导航部分  start */
+.navitems{
+    width: 770px;
+    height: 40px;
+    position: absolute;
+    /* background-color: skyblue; */
+    bottom: -15px;
+    left: 270px;     
+} 
+.navitems  li {
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}   
+.navitems  li  a{
+    font-size: 16px;
+    font-weight: 700;
+    color: #555;
+} 
+.navitems  li  a:hover{
+    color: #f10215;
+} 
+   /* 超级品牌日 start */
+.surer{
+   position: absolute;
+   bottom:-12px;
+   right:80px;
+}
+           /* 中间大部分 end */
+          /* 页面底部分  start */
+footer{
+    height:700px;
+    background-color:#eaeaea;
+    margin-top: 35px;
+} 
+.service{
+    height: 102px;
+    /* width: 100%; */
+    /* line-height: 102px; */     
+    border-bottom: 1px solid  #dedede;
+    position: relative;
+    margin-top: 100px;
+    padding-top: 100px;
+}   
+.service ul  li  {
+    width: 297px;
+    height: 43px;
+    line-height: 43px;
+    float: left;
+    margin-right: 30px; 
+    /* position: relative; */
+  
+}    
+.service li h5 {
+    position: absolute;
+    top: 100px;
+    left:50px;
+    width: 38px;
+    height: 38px;
+    background:url(../images/多快好省等精灵图.png) -27px -24px no-repeat;
+}
+.service li:nth-child(2) h5{
+    /* position: absolute; */
+    width: 38px;
+    height: 38px;
+    top: 100px;
+    left:380px;
+    background: url(../images/多快好省等精灵图.png) -80px -24px no-repeat;
+}
+.service li:nth-child(3) h5{
+    width: 38px;
+    height: 38px;
+    top: 100px;
+    left:700px;
+    background: url(../images/多快好省等精灵图.png) -138px -24px no-repeat;
+}
+.service li:nth-child(4) h5{
+    width: 38px;
+    height: 38px;
+    top: 100px;
+    left:1030px;
+    background: url(../images/多快好省等精灵图.png) -200px -24px no-repeat;
+}
+.service li p{
+    font-weight: 700;
+    margin-left: 82px;
+} 
+.help{
+    height: 200px;
+    border-bottom: 1px solid  #dedede;
+    padding-top: 25px;
+    box-sizing: border-box;
+}
+.help dl{
+    width: 130px;
+    margin-left: 100px;
+    float: left;
+}
+.help dt {
+    height: 30px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 700;
+}
+.help dd{
+    height: 22px;
+}
+.fr1 h5{
+    height: 30px;
+    font-size: 14px;
+    color: #666;  
+    /* text-align: right; */
+    margin-right: 90px;
+}
+.fr1 p{
+    font-size: 12px;
+    color: #666;
+    line-height: 18px;
+    width: 180px;
+    float: right;
+    padding-right: 150px;
+}
+.fr1 a{                           /*注意重复名称*/
+    display: block;
+    margin-top: 5px;
+    width: 180px;
+    text-align: right;
+    float: right;
+    padding-right: 150px;
+}
+/* 底部版权 */
+.copyright{
+    padding-top: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+}
+.copyright span{
+     margin: 0 10px ;
+}
+.copyright  a{
+        color:#666 ;   
+}
+.copyright div{
+    margin-top: 20px;
+
+}
+.copyright div p{
+    line-height: 22px;
+}
+.foot-icon a{
+     display: inline-block;        /*  行内块可以用text-align:center; 进行居中对齐 */
+     width: 103px; 
+    height: 33px;
+    background:url(../images/多快好省等精灵图.png)   -19px -110px no-repeat;
+    margin: 20px 4px 0;
+}
+.foot-icon a:nth-child(2){
+    background:url(../images/多快好省等精灵图.png)   -160px -108px no-repeat;
+}
+.foot-icon a:nth-child(3){
+    background:url(../images/多快好省等精灵图.png)   -21px -172px no-repeat;
+}
+.foot-icon a:nth-child(4){
+    background:url(../images/多快好省等精灵图.png)   -164px -180px no-repeat;
+}
+.foot-icon a:nth-child(5){
+    background:url(../images/多快好省等精灵图.png)   -20px -252px no-repeat;
+}
+
+          /* 页面底部分  end */
+ 
